@@ -63,6 +63,27 @@ template.innerHTML = `
     .btn-inline.btn-disabled, .btn-inline.btn-sem-disabled { background: var(--mds-color-bg-inline-disabled); color: var(--mds-color-text-disabled); border-color: var(--mds-color-border-inline, transparent); cursor: not-allowed; }
     .btn-inline.btn-sem-destructive { background: var(--mds-color-bg-destructive); color: var(--mds-color-text-default-invers); border: var(--mds-border-width-inline, 0) solid var(--mds-color-border-inline, transparent); }
     .btn-inline.btn-sem-remotecontrol { border: var(--mds-border-width-remotecontrol, 2px) solid var(--mds-color-border-remotecontrol); }
+    /* Button-Größenklassen */
+    .btn.btn-lg {
+      min-height: var(--mds-atom-size-lg, 40px);
+      height: var(--mds-atom-size-lg, 40px);
+      min-width: var(--mds-atom-size-lg, 40px);
+    }
+    .btn.btn-md {
+      min-height: var(--mds-atom-size-md, 32px);
+      height: var(--mds-atom-size-md, 32px);
+      min-width: var(--mds-atom-size-md, 32px);
+    }
+    .btn.btn-sm {
+      min-height: var(--mds-atom-size-sm, 28px);
+      height: var(--mds-atom-size-sm, 28px);
+      min-width: var(--mds-atom-size-sm, 28px);
+    }
+    .btn.btn-xs {
+      min-height: var(--mds-atom-size-xs, 24px);
+      height: var(--mds-atom-size-xs, 24px);
+      min-width: var(--mds-atom-size-xs, 24px);
+    }
     /* Destructive, RemoteControl, Disabled, etc. analog ergänzen */
   </style>
   <button class="btn">

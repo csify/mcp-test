@@ -158,11 +158,12 @@
   <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
   <h1>MDS Web Components – Systematische Demo</h1>
   <div class="demo-section">
-    <div class="demo-label">Button Varianten × States</div>
+    <div class="demo-label">Button Varianten × States × Größen</div>
     <table class="demo-matrix">
       <thead>
         <tr>
           <th>Variante</th>
+          <th>Größe</th>
           <th>Default</th>
           <th>Hover</th>
           <th>Focus</th>
@@ -173,45 +174,154 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>Primary</th>
-          <td><mds-button type="primary" label="Primary"></mds-button></td>
-          <td><mds-button type="primary" label="Hover" interaction-state="hover"></mds-button></td>
-          <td><mds-button type="primary" label="Focus" interaction-state="focus"></mds-button></td>
-          <td><mds-button type="primary" label="Pressed" interaction-state="pressed"></mds-button></td>
-          <td><mds-button type="primary" label="Disabled" interaction-state="disabled"></mds-button></td>
-          <td><mds-button type="primary" label="Destructive" semantic-state="destructive"></mds-button></td>
-          <td><mds-button type="primary" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        <!-- Für jede Variante und jede Größe eine Zeile -->
+        <!-- Primary -->
+        <tr><th rowspan="4">Primary</th><th>lg</th>
+          <td><mds-button type="primary" size="lg" label="Primary lg"></mds-button></td>
+          <td><mds-button type="primary" size="lg" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="primary" size="lg" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="primary" size="lg" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="primary" size="lg" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="primary" size="lg" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="primary" size="lg" label="Remote" semantic-state="remotecontrol"></mds-button></td>
         </tr>
-        <tr>
-          <th>Secondary</th>
-          <td><mds-button type="secondary" label="Secondary"></mds-button></td>
-          <td><mds-button type="secondary" label="Hover" interaction-state="hover"></mds-button></td>
-          <td><mds-button type="secondary" label="Focus" interaction-state="focus"></mds-button></td>
-          <td><mds-button type="secondary" label="Pressed" interaction-state="pressed"></mds-button></td>
-          <td><mds-button type="secondary" label="Disabled" interaction-state="disabled"></mds-button></td>
-          <td><mds-button type="secondary" label="Destructive" semantic-state="destructive"></mds-button></td>
-          <td><mds-button type="secondary" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        <tr><th>md</th>
+          <td><mds-button type="primary" size="md" label="Primary md"></mds-button></td>
+          <td><mds-button type="primary" size="md" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="primary" size="md" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="primary" size="md" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="primary" size="md" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="primary" size="md" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="primary" size="md" label="Remote" semantic-state="remotecontrol"></mds-button></td>
         </tr>
-        <tr>
-          <th>Tertiary</th>
-          <td><mds-button type="tertiary" label="Tertiary"></mds-button></td>
-          <td><mds-button type="tertiary" label="Hover" interaction-state="hover"></mds-button></td>
-          <td><mds-button type="tertiary" label="Focus" interaction-state="focus"></mds-button></td>
-          <td><mds-button type="tertiary" label="Pressed" interaction-state="pressed"></mds-button></td>
-          <td><mds-button type="tertiary" label="Disabled" interaction-state="disabled"></mds-button></td>
-          <td><mds-button type="tertiary" label="Destructive" semantic-state="destructive"></mds-button></td>
-          <td><mds-button type="tertiary" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        <tr><th>sm</th>
+          <td><mds-button type="primary" size="sm" label="Primary sm"></mds-button></td>
+          <td><mds-button type="primary" size="sm" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="primary" size="sm" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="primary" size="sm" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="primary" size="sm" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="primary" size="sm" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="primary" size="sm" label="Remote" semantic-state="remotecontrol"></mds-button></td>
         </tr>
-        <tr>
-          <th>Inline</th>
-          <td><mds-button type="inline" label="Inline"></mds-button></td>
-          <td><mds-button type="inline" label="Hover" interaction-state="hover"></mds-button></td>
-          <td><mds-button type="inline" label="Focus" interaction-state="focus"></mds-button></td>
-          <td><mds-button type="inline" label="Pressed" interaction-state="pressed"></mds-button></td>
-          <td><mds-button type="inline" label="Disabled" interaction-state="disabled"></mds-button></td>
-          <td><mds-button type="inline" label="Destructive" semantic-state="destructive"></mds-button></td>
-          <td><mds-button type="inline" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        <tr><th>xs</th>
+          <td><mds-button type="primary" size="xs" label="Primary xs"></mds-button></td>
+          <td><mds-button type="primary" size="xs" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="primary" size="xs" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="primary" size="xs" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="primary" size="xs" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="primary" size="xs" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="primary" size="xs" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <!-- Secondary -->
+        <tr><th rowspan="4">Secondary</th><th>lg</th>
+          <td><mds-button type="secondary" size="lg" label="Secondary lg"></mds-button></td>
+          <td><mds-button type="secondary" size="lg" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="secondary" size="lg" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="secondary" size="lg" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="secondary" size="lg" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="secondary" size="lg" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="secondary" size="lg" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>md</th>
+          <td><mds-button type="secondary" size="md" label="Secondary md"></mds-button></td>
+          <td><mds-button type="secondary" size="md" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="secondary" size="md" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="secondary" size="md" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="secondary" size="md" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="secondary" size="md" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="secondary" size="md" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>sm</th>
+          <td><mds-button type="secondary" size="sm" label="Secondary sm"></mds-button></td>
+          <td><mds-button type="secondary" size="sm" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="secondary" size="sm" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="secondary" size="sm" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="secondary" size="sm" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="secondary" size="sm" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="secondary" size="sm" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>xs</th>
+          <td><mds-button type="secondary" size="xs" label="Secondary xs"></mds-button></td>
+          <td><mds-button type="secondary" size="xs" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="secondary" size="xs" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="secondary" size="xs" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="secondary" size="xs" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="secondary" size="xs" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="secondary" size="xs" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <!-- Tertiary -->
+        <tr><th rowspan="4">Tertiary</th><th>lg</th>
+          <td><mds-button type="tertiary" size="lg" label="Tertiary lg"></mds-button></td>
+          <td><mds-button type="tertiary" size="lg" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="tertiary" size="lg" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="tertiary" size="lg" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="tertiary" size="lg" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="tertiary" size="lg" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="tertiary" size="lg" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>md</th>
+          <td><mds-button type="tertiary" size="md" label="Tertiary md"></mds-button></td>
+          <td><mds-button type="tertiary" size="md" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="tertiary" size="md" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="tertiary" size="md" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="tertiary" size="md" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="tertiary" size="md" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="tertiary" size="md" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>sm</th>
+          <td><mds-button type="tertiary" size="sm" label="Tertiary sm"></mds-button></td>
+          <td><mds-button type="tertiary" size="sm" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="tertiary" size="sm" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="tertiary" size="sm" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="tertiary" size="sm" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="tertiary" size="sm" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="tertiary" size="sm" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>xs</th>
+          <td><mds-button type="tertiary" size="xs" label="Tertiary xs"></mds-button></td>
+          <td><mds-button type="tertiary" size="xs" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="tertiary" size="xs" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="tertiary" size="xs" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="tertiary" size="xs" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="tertiary" size="xs" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="tertiary" size="xs" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <!-- Inline -->
+        <tr><th rowspan="4">Inline</th><th>lg</th>
+          <td><mds-button type="inline" size="lg" label="Inline lg"></mds-button></td>
+          <td><mds-button type="inline" size="lg" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="inline" size="lg" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="inline" size="lg" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="inline" size="lg" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="inline" size="lg" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="inline" size="lg" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>md</th>
+          <td><mds-button type="inline" size="md" label="Inline md"></mds-button></td>
+          <td><mds-button type="inline" size="md" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="inline" size="md" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="inline" size="md" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="inline" size="md" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="inline" size="md" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="inline" size="md" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>sm</th>
+          <td><mds-button type="inline" size="sm" label="Inline sm"></mds-button></td>
+          <td><mds-button type="inline" size="sm" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="inline" size="sm" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="inline" size="sm" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="inline" size="sm" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="inline" size="sm" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="inline" size="sm" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr><th>xs</th>
+          <td><mds-button type="inline" size="xs" label="Inline xs"></mds-button></td>
+          <td><mds-button type="inline" size="xs" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="inline" size="xs" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="inline" size="xs" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="inline" size="xs" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="inline" size="xs" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="inline" size="xs" label="Remote" semantic-state="remotecontrol"></mds-button></td>
         </tr>
       </tbody>
     </table>

@@ -58,7 +58,7 @@ export class MdsButton extends HTMLElement {
     ].join(' ');
     // Icon
     if (this.hasAttribute('has-icon') && this.getAttribute('icon-src')) {
-      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="icon" />`;
+      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="icon" style="width: 20px; height: 20px; object-fit: contain;" />`;
       (icon as HTMLElement).style.display = '';
     } else {
       icon.innerHTML = '';

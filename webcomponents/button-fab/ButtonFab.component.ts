@@ -59,7 +59,7 @@ export class MdsFab extends HTMLElement {
     ].join(' ');
     // Icon
     if (this.getAttribute('icon-src')) {
-      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="FAB Icon" />`;
+      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="FAB Icon" style="width: 24px; height: 24px; object-fit: contain;" />`;
     } else {
       icon.innerHTML = '';
     }

@@ -68,14 +68,9 @@ export class MdsButton extends HTMLElement {
     ].join(' ');
     // Icon
     if (this.hasAttribute('has-icon') && this.getAttribute('icon-src')) {
-      let iconColor = '';
-      // Farb-Logik für das Icon je nach Button-Variante
-      if (btn.classList.contains('btn-primary') || btn.classList.contains('btn-sem-destructive') || btn.classList.contains('btn-sem-remotecontrol')) {
-        iconColor = 'filter: invert(1);'; // Weiß
-      } else if (btn.classList.contains('btn-secondary')) {
-        iconColor = 'filter: none;'; // Schwarz
-      }
-      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="icon" style="width: 20px; height: 20px; object-fit: contain; ${iconColor}" />`;
+      // Icon-Farbe = Schriftfarbe des Buttons
+      const computedColor = getComputedStyle(btn).color;
+      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="icon" style="width: 20px; height: 20px; object-fit: contain; filter: none; color: ${computedColor};" />`;
       (icon as HTMLElement).style.display = '';
     } else {
       icon.innerHTML = '';

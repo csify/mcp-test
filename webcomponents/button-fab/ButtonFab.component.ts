@@ -57,21 +57,9 @@ export class MdsFab extends HTMLElement {
     ].join(' ');
     // Icon
     if (this.getAttribute('icon-src')) {
-      let iconColor = '';
-      // Farb-Logik für das Icon je nach FAB-Variante
-      if (
-        btn.classList.contains('fab-default') ||
-        btn.classList.contains('fab-hover') ||
-        btn.classList.contains('fab-focus') ||
-        btn.classList.contains('fab-pressed') ||
-        btn.classList.contains('fab-sem-destructive') ||
-        btn.classList.contains('fab-sem-remotecontrol')
-      ) {
-        iconColor = 'filter: invert(1);'; // Weiß
-      } else {
-        iconColor = 'filter: none;'; // Schwarz
-      }
-      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="FAB Icon" style="width: 24px; height: 24px; object-fit: contain; ${iconColor}" />`;
+      // Icon-Farbe = Schriftfarbe des FAB
+      const computedColor = getComputedStyle(btn).color;
+      icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="FAB Icon" style="width: 24px; height: 24px; object-fit: contain; filter: none; color: ${computedColor};" />`;
     } else {
       icon.innerHTML = '';
     }

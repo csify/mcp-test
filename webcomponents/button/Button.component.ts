@@ -4,26 +4,62 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
-    .btn { box-sizing: border-box; display: flex; flex-direction: row; align-items: center; justify-content: center; padding: var(--mds-spacing-xs, 0) var(--mds-spacing-s, 20px); position: relative; border-radius: var(--mds-radius-s, 2px); gap: var(--mds-spacing-xs, 5px); font-family: 'Weissenhof Grotesk Variable', sans-serif; font-size: 14px; font-weight: 390; line-height: 20px; text-align: center; white-space: nowrap; height: 100%; }
-    .btn-icon { overflow: hidden; position: relative; flex-shrink: 0; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; }
-    .btn-icon svg { width: 20px; height: 20px; fill: currentColor; }
+    .btn { 
+      box-sizing: border-box; 
+      display: flex; 
+      flex-direction: row; 
+      align-items: center; 
+      justify-content: center; 
+      padding: var(--mds-spacing-button-padding-vertical, var(--mds-spacing-xs, 0)) var(--mds-spacing-button-padding-horizontal, var(--mds-spacing-s, 20px));
+      position: relative; 
+      border-radius: var(--mds-radius-button, var(--mds-radius-s, 2px)); 
+      gap: var(--mds-spacing-button-gap, var(--mds-spacing-xs, 5px)); 
+      font-family: var(--mds-font-family-button, 'Weissenhof Grotesk Variable', sans-serif); 
+      font-size: var(--mds-font-size-button, 14px); 
+      font-weight: var(--mds-font-weight-button, 390); 
+      line-height: var(--mds-line-height-button, 20px); 
+      text-align: center; 
+      white-space: nowrap; 
+      height: 100%; 
+      letter-spacing: var(--mds-letter-spacing-button, 0);
+      outline: var(--mds-outline-width-button, 0) solid var(--mds-outline-color-button, transparent);
+      box-shadow: var(--mds-shadow-button, none);
+    }
+    .btn-icon { overflow: hidden; position: relative; flex-shrink: 0; width: var(--mds-icon-size-button, 16px); height: var(--mds-icon-size-button, 16px); display: flex; align-items: center; justify-content: center; }
+    .btn-icon svg { width: var(--mds-icon-size-button, 20px); height: var(--mds-icon-size-button, 20px); fill: currentColor; }
     .btn-label { display: flex; flex-direction: column; justify-content: center; height: 100%; }
     /* Primary */
-    .btn-primary.btn-default { background: var(--mds-color-bg-primary); color: var(--mds-color-text-default-invers); border: 1px solid var(--mds-color-border-primary, transparent); }
+    .btn-primary.btn-default { background: var(--mds-color-bg-primary); color: var(--mds-color-text-default-invers); border: var(--mds-border-width-primary, 1px) solid var(--mds-color-border-primary, transparent); }
     .btn-primary.btn-hover { background: var(--mds-color-bg-primary-hover); color: var(--mds-color-text-default-invers); }
-    .btn-primary.btn-focus, .btn-primary.btn-focus-visible { box-shadow: 0 0 0 4px var(--mds-shadow-focus); }
+    .btn-primary.btn-focus, .btn-primary.btn-focus-visible { box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus); }
     .btn-primary.btn-pressed { background: var(--mds-color-bg-primary-pressed); color: var(--mds-color-text-default-invers); }
     .btn-primary.btn-disabled, .btn-primary.btn-sem-disabled { background: var(--mds-color-bg-primary-disabled); color: var(--mds-color-text-disabled); cursor: not-allowed; }
     .btn-primary.btn-sem-destructive { background: var(--mds-color-bg-destructive); color: var(--mds-color-text-default-invers); }
-    .btn-primary.btn-sem-remotecontrol { border: 2px solid var(--mds-color-border-remotecontrol); }
+    .btn-primary.btn-sem-remotecontrol { border: var(--mds-border-width-remotecontrol, 2px) solid var(--mds-color-border-remotecontrol); }
     /* Secondary */
-    .btn-secondary.btn-default { background: var(--mds-color-bg-secondary); color: var(--mds-color-text-default); border: 1px solid var(--mds-color-border-secondary); }
+    .btn-secondary.btn-default { background: var(--mds-color-bg-secondary); color: var(--mds-color-text-default); border: var(--mds-border-width-secondary, 1px) solid var(--mds-color-border-secondary); }
     .btn-secondary.btn-hover { background: var(--mds-color-bg-secondary-hover); color: var(--mds-color-text-default); }
-    .btn-secondary.btn-focus, .btn-secondary.btn-focus-visible { box-shadow: 0 0 0 4px var(--mds-shadow-focus); }
+    .btn-secondary.btn-focus, .btn-secondary.btn-focus-visible { box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus); }
     .btn-secondary.btn-pressed { background: var(--mds-color-bg-secondary-pressed); color: var(--mds-color-text-default); }
     .btn-secondary.btn-disabled, .btn-secondary.btn-sem-disabled { background: var(--mds-color-bg-secondary-disabled); color: var(--mds-color-text-disabled); border-color: var(--mds-color-border-secondary); cursor: not-allowed; }
-    .btn-secondary.btn-sem-destructive { background: var(--mds-color-bg-destructive); color: var(--mds-color-text-default-invers); border: 1px solid var(--mds-color-border-secondary); }
-    .btn-secondary.btn-sem-remotecontrol { border: 2px solid var(--mds-color-border-remotecontrol); }
+    .btn-secondary.btn-sem-destructive { background: var(--mds-color-bg-destructive); color: var(--mds-color-text-default-invers); border: var(--mds-border-width-secondary, 1px) solid var(--mds-color-border-secondary); }
+    .btn-secondary.btn-sem-remotecontrol { border: var(--mds-border-width-remotecontrol, 2px) solid var(--mds-color-border-remotecontrol); }
+    /* Tertiary */
+    .btn-tertiary.btn-default { background: var(--mds-color-bg-tertiary); color: var(--mds-color-text-default); border: var(--mds-border-width-tertiary, 1px) solid var(--mds-color-border-tertiary); }
+    .btn-tertiary.btn-hover { background: var(--mds-color-bg-tertiary-hover); color: var(--mds-color-text-default); }
+    .btn-tertiary.btn-focus, .btn-tertiary.btn-focus-visible { box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus); }
+    .btn-tertiary.btn-pressed { background: var(--mds-color-bg-tertiary-pressed); color: var(--mds-color-text-default); }
+    .btn-tertiary.btn-disabled, .btn-tertiary.btn-sem-disabled { background: var(--mds-color-bg-tertiary-disabled); color: var(--mds-color-text-disabled); border-color: var(--mds-color-border-tertiary); cursor: not-allowed; }
+    .btn-tertiary.btn-sem-destructive { background: var(--mds-color-bg-destructive); color: var(--mds-color-text-default-invers); border: var(--mds-border-width-tertiary, 1px) solid var(--mds-color-border-tertiary); }
+    .btn-tertiary.btn-sem-remotecontrol { border: var(--mds-border-width-remotecontrol, 2px) solid var(--mds-color-border-remotecontrol); }
+    /* Inline */
+    .btn-inline.btn-default { background: var(--mds-color-bg-inline); color: var(--mds-color-text-default); border: var(--mds-border-width-inline, 0) solid var(--mds-color-border-inline, transparent); }
+    .btn-inline.btn-hover { background: var(--mds-color-bg-inline-hover); color: var(--mds-color-text-default); }
+    .btn-inline.btn-focus, .btn-inline.btn-focus-visible { box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus); }
+    .btn-inline.btn-pressed { background: var(--mds-color-bg-inline-pressed); color: var(--mds-color-text-default); }
+    .btn-inline.btn-disabled, .btn-inline.btn-sem-disabled { background: var(--mds-color-bg-inline-disabled); color: var(--mds-color-text-disabled); border-color: var(--mds-color-border-inline, transparent); cursor: not-allowed; }
+    .btn-inline.btn-sem-destructive { background: var(--mds-color-bg-destructive); color: var(--mds-color-text-default-invers); border: var(--mds-border-width-inline, 0) solid var(--mds-color-border-inline, transparent); }
+    .btn-inline.btn-sem-remotecontrol { border: var(--mds-border-width-remotecontrol, 2px) solid var(--mds-color-border-remotecontrol); }
     /* Destructive, RemoteControl, Disabled, etc. analog ergänzen */
   </style>
   <button class="btn">

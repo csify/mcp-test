@@ -4,18 +4,35 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
-    .fab-root { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--mds-radius-circle, 50%); box-shadow: var(--mds-shadow-fab); background: var(--mds-color-bg-fab); color: var(--mds-color-icon-fab); border: none; padding: var(--mds-spacing-s, 12px); transition: background 0.2s, box-shadow 0.2s; }
-    .fab-md { width: 40px; height: 40px; }
-    .fab-lg { width: 56px; height: 56px; }
+    .fab-root { 
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center; 
+      border-radius: var(--mds-radius-fab, var(--mds-radius-circle, 50%)); 
+      box-shadow: var(--mds-shadow-fab, none); 
+      background: var(--mds-color-bg-fab); 
+      color: var(--mds-color-icon-fab); 
+      border: var(--mds-border-width-fab, 0) solid var(--mds-color-border-fab, transparent); 
+      padding: var(--mds-spacing-fab-padding, var(--mds-spacing-s, 12px)); 
+      transition: background 0.2s, box-shadow 0.2s; 
+      font-family: var(--mds-font-family-fab, 'Weissenhof Grotesk Variable', sans-serif); 
+      font-size: var(--mds-font-size-fab, 16px); 
+      font-weight: var(--mds-font-weight-fab, 390); 
+      line-height: var(--mds-line-height-fab, 24px); 
+      letter-spacing: var(--mds-letter-spacing-fab, 0);
+      outline: var(--mds-outline-width-fab, 0) solid var(--mds-outline-color-fab, transparent);
+    }
+    .fab-md { width: var(--mds-size-fab-md, 40px); height: var(--mds-size-fab-md, 40px); }
+    .fab-lg { width: var(--mds-size-fab-lg, 56px); height: var(--mds-size-fab-lg, 56px); }
     .fab-default { background: var(--mds-color-bg-fab); color: var(--mds-color-icon-fab); }
     .fab-hover { background: var(--mds-color-bg-fab-hover); color: var(--mds-color-icon-fab); }
-    .fab-focus { box-shadow: 0 0 0 4px var(--mds-color-bg-fab-hover), var(--mds-shadow-fab); }
+    .fab-focus { box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus), var(--mds-shadow-fab, none); }
     .fab-pressed { background: var(--mds-color-bg-fab-pressed); color: var(--mds-color-icon-fab); }
-    .fab-disabled, .fab-sem-disabled { background: var(--mds-color-bg-fab-disabled); color: var(--mds-color-icon-fab-disabled); cursor: not-allowed; opacity: 0.6; }
+    .fab-disabled, .fab-sem-disabled { background: var(--mds-color-bg-fab-disabled); color: var(--mds-color-icon-fab-disabled); cursor: not-allowed; opacity: var(--mds-opacity-fab-disabled, 0.6); }
     .fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); color: var(--mds-color-icon-fab); }
     .fab-sem-remotecontrol { background: var(--mds-color-bg-fab-remotecontrol); color: var(--mds-color-icon-fab); }
-    .fab-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
-    .fab-icon svg { width: 24px; height: 24px; fill: currentColor; }
+    .fab-icon { width: var(--mds-icon-size-fab, 24px); height: var(--mds-icon-size-fab, 24px); display: flex; align-items: center; justify-content: center; }
+    .fab-icon svg { width: var(--mds-icon-size-fab, 24px); height: var(--mds-icon-size-fab, 24px); fill: currentColor; }
   </style>
   <button class="fab-root">
     <span class="fab-icon">

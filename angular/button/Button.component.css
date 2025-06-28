@@ -1,3 +1,16 @@
+/*
+  Figma Button Base Styles Mapping (Beispiel):
+  --button-bg-primary-default
+  --button-bg-primary-hover
+  --button-bg-primary-pressed
+  --button-bg-primary-disabled
+  --button-bg-primary-destructive
+  --button-bg-primary-remotecontrol
+  --button-fg-primary-default
+  --button-fg-primary-disabled
+  ... analog für secondary, tertiary, inline, border, shadow etc.
+*/
+
 /* button1.component.css - Vanilla CSS für Angular Button1 */
 
 .button1-root, .btn {
@@ -67,41 +80,41 @@
 }
 
 /* --- Primary Button States --- */
-.btn-primary.btn-default { background: #321850; color: #fff; }
-.btn-primary.btn-hover { background: #432a6c; }
-.btn-primary.btn-focus, .btn-primary.btn-focus-visible { box-shadow: 0 0 0 4px #bdb2ff; }
-.btn-primary.btn-pressed { background: #1d0e2e; }
-.btn-primary.btn-disabled, .btn-primary.btn-sem-disabled { background: #e0e0e0; color: #bdbdbd; cursor: not-allowed; }
-.btn-primary.btn-sem-destructive { background: #cc3542; color: #fff; }
-.btn-primary.btn-sem-remotecontrol { border: 2px solid #008282; }
+.btn-primary.btn-default { background: var(--button-bg-primary-default); color: var(--button-fg-primary-default); }
+.btn-primary.btn-hover { background: var(--button-bg-primary-hover); }
+.btn-primary.btn-focus, .btn-primary.btn-focus-visible { box-shadow: 0 0 0 4px var(--button-shadow-primary-focus); }
+.btn-primary.btn-pressed { background: var(--button-bg-primary-pressed); }
+.btn-primary.btn-disabled, .btn-primary.btn-sem-disabled { background: var(--button-bg-primary-disabled); color: var(--button-fg-primary-disabled); cursor: not-allowed; }
+.btn-primary.btn-sem-destructive { background: var(--button-bg-primary-destructive); color: var(--button-fg-primary-destructive); }
+.btn-primary.btn-sem-remotecontrol { border: 2px solid var(--button-border-primary-remotecontrol); }
 
 /* --- Secondary Button States --- */
-.btn-secondary.btn-default { background: #fff; color: #321850; border: 1px solid #321850; }
-.btn-secondary.btn-hover { background: #f3f0fa; }
-.btn-secondary.btn-focus, .btn-secondary.btn-focus-visible { box-shadow: 0 0 0 4px #bdb2ff; }
-.btn-secondary.btn-pressed { background: #e0e0e0; }
-.btn-secondary.btn-disabled, .btn-secondary.btn-sem-disabled { background: #f5f5f5; color: #bdbdbd; border-color: #e0e0e0; cursor: not-allowed; }
-.btn-secondary.btn-sem-destructive { background: #fff; color: #cc3542; border: 1px solid #cc3542; }
-.btn-secondary.btn-sem-remotecontrol { border: 2px solid #008282; }
+.btn-secondary.btn-default { background: var(--button-bg-secondary-default); color: var(--button-fg-secondary-default); border: 1px solid var(--button-border-secondary-default); }
+.btn-secondary.btn-hover { background: var(--button-bg-secondary-hover); }
+.btn-secondary.btn-focus, .btn-secondary.btn-focus-visible { box-shadow: 0 0 0 4px var(--button-shadow-secondary-focus); }
+.btn-secondary.btn-pressed { background: var(--button-bg-secondary-pressed); }
+.btn-secondary.btn-disabled, .btn-secondary.btn-sem-disabled { background: var(--button-bg-secondary-disabled); color: var(--button-fg-secondary-disabled); border-color: var(--button-border-secondary-disabled); cursor: not-allowed; }
+.btn-secondary.btn-sem-destructive { background: var(--button-bg-secondary-destructive); color: var(--button-fg-secondary-destructive); border: 1px solid var(--button-border-secondary-destructive); }
+.btn-secondary.btn-sem-remotecontrol { border: 2px solid var(--button-border-secondary-remotecontrol); }
 
 /* --- Tertiary Button States --- */
-.btn-tertiary.btn-default { background: #0000001a; color: #321850; }
-.btn-tertiary.btn-hover { background: #eae6f7; }
-.btn-tertiary.btn-focus, .btn-tertiary.btn-focus-visible { box-shadow: 0 0 0 4px #bdb2ff; }
-.btn-tertiary.btn-pressed { background: #d1c4e9; }
-.btn-tertiary.btn-disabled, .btn-tertiary.btn-sem-disabled { background: #f5f5f5; color: #bdbdbd; cursor: not-allowed; }
-.btn-tertiary.btn-sem-destructive { background: #ffeaea; color: #cc3542; }
-.btn-tertiary.btn-sem-remotecontrol { border: 2px solid #008282; }
+.btn-tertiary.btn-default { background: var(--button-bg-tertiary-default); color: var(--button-fg-tertiary-default); }
+.btn-tertiary.btn-hover { background: var(--button-bg-tertiary-hover); }
+.btn-tertiary.btn-focus, .btn-tertiary.btn-focus-visible { box-shadow: 0 0 0 4px var(--button-shadow-tertiary-focus); }
+.btn-tertiary.btn-pressed { background: var(--button-bg-tertiary-pressed); }
+.btn-tertiary.btn-disabled, .btn-tertiary.btn-sem-disabled { background: var(--button-bg-tertiary-disabled); color: var(--button-fg-tertiary-disabled); cursor: not-allowed; }
+.btn-tertiary.btn-sem-destructive { background: var(--button-bg-tertiary-destructive); color: var(--button-fg-tertiary-destructive); }
+.btn-tertiary.btn-sem-remotecontrol { border: 2px solid var(--button-border-tertiary-remotecontrol); }
 
 /* --- Inline Button States --- */
-.btn-inline.btn-default { background: transparent; color: #321850; }
+.btn-inline.btn-default { background: var(--button-bg-inline-default); color: var(--button-fg-inline-default); }
 .btn-inline.btn-hover { text-decoration: underline; }
-.btn-inline.btn-focus, .btn-inline.btn-focus-visible { box-shadow: 0 0 0 4px #bdb2ff; }
-.btn-inline.btn-pressed { color: #1d0e2e; }
-.btn-inline.btn-disabled, .btn-inline.btn-sem-disabled { color: #bdbdbd; cursor: not-allowed; }
-.btn-inline.btn-sem-destructive { color: #cc3542; }
-.btn-inline.btn-sem-remotecontrol { border-bottom: 2px solid #008282; }
+.btn-inline.btn-focus, .btn-inline.btn-focus-visible { box-shadow: 0 0 0 4px var(--button-shadow-inline-focus); }
+.btn-inline.btn-pressed { color: var(--button-fg-inline-pressed); }
+.btn-inline.btn-disabled, .btn-inline.btn-sem-disabled { color: var(--button-fg-inline-disabled); cursor: not-allowed; }
+.btn-inline.btn-sem-destructive { color: var(--button-fg-inline-destructive); }
+.btn-inline.btn-sem-remotecontrol { border-bottom: 2px solid var(--button-border-inline-remotecontrol); }
 
 /* --- Generische States für Kombis --- */
-.btn-selected { outline: 2px solid #6254f7; }
-.btn-focus-visible { outline: 2px solid #bdb2ff; }
+.btn-selected { outline: 2px solid var(--button-outline-selected); }
+.btn-focus-visible { outline: 2px solid var(--button-outline-focus-visible); }

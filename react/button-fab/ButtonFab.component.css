@@ -1,0 +1,57 @@
+/*
+  Figma Base Styles für FAB (Floating Action Button):
+  --mds-color-bg-fab
+  --mds-color-bg-fab-hover
+  --mds-color-bg-fab-pressed
+  --mds-color-bg-fab-disabled
+  --mds-color-bg-fab-destructive
+  --mds-color-text-fab
+  --mds-color-text-fab-disabled
+  --mds-radius-circle
+  --mds-shadow-fab
+  --mds-spacing-s
+  --mds-spacing-m
+  ...
+*/
+
+.fab-root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--mds-radius-circle, 50%);
+  box-shadow: var(--mds-shadow-fab);
+  background: var(--mds-color-bg-fab);
+  color: var(--mds-color-text-fab);
+  border: none;
+  padding: var(--mds-spacing-s, 12px);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.fab-md { width: 40px; height: 40px; }
+.fab-lg { width: 56px; height: 56px; }
+
+.fab-hover { background: var(--mds-color-bg-fab-hover); }
+.fab-focus { box-shadow: 0 0 0 4px var(--mds-shadow-focus); }
+.fab-pressed { background: var(--mds-color-bg-fab-pressed); }
+.fab-disabled, .fab-sem-disabled {
+  background: var(--mds-color-bg-fab-disabled);
+  color: var(--mds-color-text-fab-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); }
+
+.fab-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab-label {
+  margin-left: var(--mds-spacing-s, 8px);
+  font-size: 16px;
+  font-family: inherit;
+  color: inherit;
+}

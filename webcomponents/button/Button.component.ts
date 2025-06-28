@@ -68,22 +68,38 @@ template.innerHTML = `
       min-height: var(--mds-atom-size-lg, 40px);
       height: var(--mds-atom-size-lg, 40px);
       min-width: var(--mds-atom-size-lg, 40px);
+      padding: var(--mds-spacing-button-padding-vertical-lg, 10px) var(--mds-spacing-button-padding-horizontal-lg, 20px);
+      font-size: var(--mds-font-size-button-lg, 16px);
     }
     .btn.btn-md {
       min-height: var(--mds-atom-size-md, 32px);
       height: var(--mds-atom-size-md, 32px);
       min-width: var(--mds-atom-size-md, 32px);
+      padding: var(--mds-spacing-button-padding-vertical-md, 8px) var(--mds-spacing-button-padding-horizontal-md, 16px);
+      font-size: var(--mds-font-size-button-md, 14px);
     }
     .btn.btn-sm {
       min-height: var(--mds-atom-size-sm, 28px);
       height: var(--mds-atom-size-sm, 28px);
       min-width: var(--mds-atom-size-sm, 28px);
+      padding: var(--mds-spacing-button-padding-vertical-sm, 6px) var(--mds-spacing-button-padding-horizontal-sm, 12px);
+      font-size: var(--mds-font-size-button-sm, 13px);
     }
     .btn.btn-xs {
       min-height: var(--mds-atom-size-xs, 24px);
       height: var(--mds-atom-size-xs, 24px);
       min-width: var(--mds-atom-size-xs, 24px);
+      padding: var(--mds-spacing-button-padding-vertical-xs, 4px) var(--mds-spacing-button-padding-horizontal-xs, 8px);
+      font-size: var(--mds-font-size-button-xs, 12px);
     }
+    .btn-icon {
+      width: inherit;
+      height: inherit;
+    }
+    .btn.btn-lg .btn-icon svg { width: var(--mds-icon-size-button-lg, 20px); height: var(--mds-icon-size-button-lg, 20px); }
+    .btn.btn-md .btn-icon svg { width: var(--mds-icon-size-button-md, 18px); height: var(--mds-icon-size-button-md, 18px); }
+    .btn.btn-sm .btn-icon svg { width: var(--mds-icon-size-button-sm, 16px); height: var(--mds-icon-size-button-sm, 16px); }
+    .btn.btn-xs .btn-icon svg { width: var(--mds-icon-size-button-xs, 14px); height: var(--mds-icon-size-button-xs, 14px); }
     /* Destructive, RemoteControl, Disabled, etc. analog ergänzen */
   </style>
   <button class="btn">

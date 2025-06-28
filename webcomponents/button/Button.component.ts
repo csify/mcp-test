@@ -24,6 +24,9 @@ template.innerHTML = `
       letter-spacing: var(--mds-letter-spacing-button, 0);
       outline: var(--mds-outline-width-button, 0) solid var(--mds-outline-color-button, transparent);
       box-shadow: var(--mds-shadow-button, none);
+      min-height: var(--mds-atom-size-lg, 40px);
+      height: var(--mds-atom-size-lg, 40px);
+      min-width: var(--mds-atom-size-lg, 40px);
     }
     .btn-icon { overflow: hidden; position: relative; flex-shrink: 0; width: var(--mds-icon-size-button, 16px); height: var(--mds-icon-size-button, 16px); display: flex; align-items: center; justify-content: center; }
     .btn-icon svg { width: var(--mds-icon-size-button, 20px); height: var(--mds-icon-size-button, 20px); fill: currentColor; }

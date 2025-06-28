@@ -80,9 +80,6 @@
   opacity: 0.4;
   pointer-events: none;
 }
-.btn-pressed {
-  background: #e0e0e0;
-}
 
 /* Semantic States */
 .btn-sem-default {

@@ -67,6 +67,4 @@ export function Button({
   );
 }
 
-export default function Button1() {
-  return <Button />;
-}
+export default Button;

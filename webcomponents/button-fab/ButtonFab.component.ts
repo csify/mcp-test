@@ -4,7 +4,20 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
-    @import url('../../react/button-fab/ButtonFab.component.css');
+    .fab-root { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--mds-radius-circle, 50%); box-shadow: var(--mds-shadow-fab); background: var(--mds-color-bg-fab); color: var(--mds-color-icon-fab); border: none; padding: var(--mds-spacing-s, 12px); transition: background 0.2s, box-shadow 0.2s; }
+    .fab-md { width: 40px; height: 40px; }
+    .fab-lg { width: 56px; height: 56px; }
+    .fab-default { background: var(--mds-color-bg-fab); color: var(--mds-color-icon-fab); }
+    .fab-hover { background: var(--mds-color-bg-fab-hover); }
+    .fab-focus { box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
+    .fab-focus.fab-hover { background: var(--mds-color-bg-fab-hover); box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
+    .fab-pressed { background: var(--mds-color-bg-fab-pressed); }
+    .fab-focus.fab-pressed { background: var(--mds-color-bg-fab-pressed); box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
+    .fab-disabled, .fab-sem-disabled { background: var(--mds-color-bg-fab-disabled); color: var(--mds-color-icon-fab-disabled); cursor: not-allowed; opacity: 0.6; }
+    .fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); }
+    .fab-sem-remotecontrol { background: var(--mds-color-bg-fab-remotecontrol); }
+    .fab-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
+    .fab-label { margin-left: var(--mds-spacing-s, 8px); font-size: 16px; font-family: inherit; color: inherit; }
   </style>
   <button class="fab-root">
     <span class="fab-icon" part="icon"></span>

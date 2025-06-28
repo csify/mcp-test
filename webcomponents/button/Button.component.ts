@@ -4,7 +4,17 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
-    @import url('../../react/button/Button.component.css');
+    .btn { box-sizing: border-box; display: flex; flex-direction: row; align-items: center; justify-content: center; padding: var(--mds-spacing-xs, 0) var(--mds-spacing-s, 20px); position: relative; border-radius: var(--mds-radius-s, 2px); gap: var(--mds-spacing-xs, 5px); }
+    .btn-icon { overflow: hidden; position: relative; flex-shrink: 0; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; }
+    .btn-label { display: flex; flex-direction: column; font-family: 'Weissenhof Grotesk Variable', sans-serif; font-size: 14px; color: var(--mds-color-text-primary); justify-content: center; line-height: 20px; font-weight: 390; text-align: center; white-space: nowrap; height: 100%; }
+    .btn-primary.btn-default { background: var(--mds-color-bg-primary); color: var(--mds-color-text-primary); border: 1px solid var(--mds-color-border-primary, transparent); }
+    .btn-primary.btn-hover { background: var(--mds-color-bg-primary-hover); }
+    .btn-primary.btn-focus, .btn-primary.btn-focus-visible { box-shadow: 0 0 0 4px var(--mds-shadow-focus); }
+    .btn-primary.btn-pressed { background: var(--mds-color-bg-primary-pressed); }
+    .btn-primary.btn-disabled, .btn-primary.btn-sem-disabled { background: var(--mds-color-bg-primary-disabled); color: var(--mds-color-text-disabled); cursor: not-allowed; }
+    .btn-primary.btn-sem-destructive { background: var(--mds-color-bg-destructive); color: var(--mds-color-text-destructive); }
+    .btn-primary.btn-sem-remotecontrol { border: 2px solid var(--mds-color-border-remotecontrol); }
+    /* ...weitere States analog wie in Button.component.css... */
   </style>
   <button class="btn">
     <span class="btn-icon" part="icon" style="display:none;"></span>

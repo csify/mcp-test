@@ -6,6 +6,7 @@
   <title>MDS Web Components Demo</title>
   <style>
     :root {
+      /* Figma Base Styles: Light */
       --mds-color-bg-primary: #7C3AED;
       --mds-color-bg-primary-hover: #6D28D9;
       --mds-color-bg-primary-pressed: #5B21B6;
@@ -29,50 +30,31 @@
       --mds-color-border-tertiary: #D1D5DB;
       --mds-color-border-inline: transparent;
       --mds-color-border-remotecontrol: #10B981;
-      --mds-color-text-primary: #fff;
-      --mds-color-text-secondary: #111827;
-      --mds-color-text-destructive: #fff;
-      --mds-color-text-disabled: #9CA3AF;
       --mds-color-text-default-invers: #fff;
       --mds-color-text-default: #111827;
-      --mds-radius-s: 6px;
+      --mds-color-text-disabled: #9CA3AF;
       --mds-radius-button: 6px;
-      --mds-radius-fab: 50%;
-      --mds-spacing-xs: 6px;
-      --mds-spacing-s: 16px;
-      --mds-spacing-m: 20px;
-      --mds-shadow-focus: #7C3AED44;
-      --mds-shadow-focus-width: 4px;
-      --mds-shadow-fab: 0 2px 8px #0001;
+      --mds-spacing-button-padding-vertical: 6px;
+      --mds-spacing-button-padding-horizontal: 20px;
+      --mds-spacing-button-gap: 6px;
+      --mds-shadow-focus: 0 0 0 4px #7C3AED44;
       --mds-font-family-button: 'Weissenhof Grotesk Variable', sans-serif;
       --mds-font-size-button: 14px;
       --mds-font-weight-button: 390;
       --mds-line-height-button: 20px;
-      --mds-letter-spacing-button: 0;
-      --mds-outline-width-button: 0;
-      --mds-outline-color-button: transparent;
-      --mds-shadow-button: none;
+      --mds-icon-size-button: 20px;
       --mds-border-width-primary: 1px;
       --mds-border-width-secondary: 1px;
       --mds-border-width-tertiary: 1px;
       --mds-border-width-inline: 0;
       --mds-border-width-remotecontrol: 2px;
-      --mds-icon-size-button: 20px;
-      --mds-spacing-button-padding-vertical: 6px;
-      --mds-spacing-button-padding-horizontal: 20px;
-      --mds-spacing-button-gap: 6px;
-      --mds-font-family-fab: 'Weissenhof Grotesk Variable', sans-serif;
-      --mds-font-size-fab: 16px;
-      --mds-font-weight-fab: 390;
-      --mds-line-height-fab: 24px;
-      --mds-letter-spacing-fab: 0;
-      --mds-outline-width-fab: 0;
-      --mds-outline-color-fab: transparent;
+      /* FAB */
+      --mds-radius-fab: 50%;
+      --mds-shadow-fab: 0 2px 8px #0001;
       --mds-size-fab-md: 40px;
       --mds-size-fab-lg: 56px;
       --mds-spacing-fab-padding: 12px;
       --mds-icon-size-fab: 24px;
-      --mds-opacity-fab-disabled: 0.6;
       --mds-color-bg-fab: #7C3AED;
       --mds-color-bg-fab-hover: #6D28D9;
       --mds-color-bg-fab-pressed: #5B21B6;
@@ -81,8 +63,10 @@
       --mds-color-bg-fab-remotecontrol: #10B981;
       --mds-color-icon-fab: #fff;
       --mds-color-icon-fab-disabled: #9CA3AF;
+      --mds-opacity-fab-disabled: 0.6;
     }
     [data-theme="dark"] {
+      /* Figma Base Styles: Dark */
       --mds-color-bg-primary: #4F378B;
       --mds-color-bg-primary-hover: #3B2670;
       --mds-color-bg-primary-pressed: #2A1B4F;
@@ -106,12 +90,9 @@
       --mds-color-border-tertiary: #27272A;
       --mds-color-border-inline: transparent;
       --mds-color-border-remotecontrol: #059669;
-      --mds-color-text-primary: #fff;
-      --mds-color-text-secondary: #F3F4F6;
-      --mds-color-text-destructive: #fff;
-      --mds-color-text-disabled: #6B7280;
       --mds-color-text-default-invers: #fff;
       --mds-color-text-default: #F3F4F6;
+      --mds-color-text-disabled: #6B7280;
       --mds-color-bg-fab: #4F378B;
       --mds-color-bg-fab-hover: #3B2670;
       --mds-color-bg-fab-pressed: #2A1B4F;
@@ -120,8 +101,7 @@
       --mds-color-bg-fab-remotecontrol: #059669;
       --mds-color-icon-fab: #fff;
       --mds-color-icon-fab-disabled: #6B7280;
-      background: #18181B;
-      color: #F3F4F6;
+      --mds-opacity-fab-disabled: 0.6;
     }
     body {
       font-family: var(--mds-font-family-button);
@@ -147,32 +127,23 @@
       box-shadow: 0 2px 8px #0001;
       transition: background 0.2s, color 0.2s;
     }
-    .demo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
+    table.demo-matrix {
+      border-collapse: separate;
+      border-spacing: 0.5rem;
+      width: 100%;
       margin-bottom: 3rem;
     }
-    .demo-card {
+    table.demo-matrix th, table.demo-matrix td {
+      text-align: center;
+      padding: 0.5rem 0.25rem;
       background: var(--mds-color-bg-secondary);
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #0001;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+      border-radius: 8px;
+      min-width: 120px;
     }
-    .demo-label {
-      font-size: 1rem;
+    table.demo-matrix th {
       font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .demo-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
+      background: none;
+      color: var(--mds-color-text-default);
     }
     .demo-section {
       margin-bottom: 3rem;
@@ -183,98 +154,102 @@
   <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
   <h1>MDS Web Components – Systematische Demo</h1>
   <div class="demo-section">
-    <div class="demo-label">Button Varianten & States</div>
-    <div class="demo-grid">
-      <div class="demo-card">
-        <div class="demo-label">Primary</div>
-        <div class="demo-row">
-          <mds-button type="primary" label="Default"></mds-button>
-          <mds-button type="primary" label="Hover" interaction-state="hover"></mds-button>
-          <mds-button type="primary" label="Focus" interaction-state="focus"></mds-button>
-          <mds-button type="primary" label="Pressed" interaction-state="pressed"></mds-button>
-          <mds-button type="primary" label="Disabled" interaction-state="disabled"></mds-button>
-        </div>
-        <div class="demo-row">
-          <mds-button type="primary" label="Destructive" semantic-state="destructive"></mds-button>
-          <mds-button type="primary" label="RemoteControl" semantic-state="remotecontrol"></mds-button>
-        </div>
-      </div>
-      <div class="demo-card">
-        <div class="demo-label">Secondary</div>
-        <div class="demo-row">
-          <mds-button type="secondary" label="Default"></mds-button>
-          <mds-button type="secondary" label="Hover" interaction-state="hover"></mds-button>
-          <mds-button type="secondary" label="Focus" interaction-state="focus"></mds-button>
-          <mds-button type="secondary" label="Pressed" interaction-state="pressed"></mds-button>
-          <mds-button type="secondary" label="Disabled" interaction-state="disabled"></mds-button>
-        </div>
-        <div class="demo-row">
-          <mds-button type="secondary" label="Destructive" semantic-state="destructive"></mds-button>
-          <mds-button type="secondary" label="RemoteControl" semantic-state="remotecontrol"></mds-button>
-        </div>
-      </div>
-      <div class="demo-card">
-        <div class="demo-label">Tertiary</div>
-        <div class="demo-row">
-          <mds-button type="tertiary" label="Default"></mds-button>
-          <mds-button type="tertiary" label="Hover" interaction-state="hover"></mds-button>
-          <mds-button type="tertiary" label="Focus" interaction-state="focus"></mds-button>
-          <mds-button type="tertiary" label="Pressed" interaction-state="pressed"></mds-button>
-          <mds-button type="tertiary" label="Disabled" interaction-state="disabled"></mds-button>
-        </div>
-        <div class="demo-row">
-          <mds-button type="tertiary" label="Destructive" semantic-state="destructive"></mds-button>
-          <mds-button type="tertiary" label="RemoteControl" semantic-state="remotecontrol"></mds-button>
-        </div>
-      </div>
-      <div class="demo-card">
-        <div class="demo-label">Inline</div>
-        <div class="demo-row">
-          <mds-button type="inline" label="Default"></mds-button>
-          <mds-button type="inline" label="Hover" interaction-state="hover"></mds-button>
-          <mds-button type="inline" label="Focus" interaction-state="focus"></mds-button>
-          <mds-button type="inline" label="Pressed" interaction-state="pressed"></mds-button>
-          <mds-button type="inline" label="Disabled" interaction-state="disabled"></mds-button>
-        </div>
-        <div class="demo-row">
-          <mds-button type="inline" label="Destructive" semantic-state="destructive"></mds-button>
-          <mds-button type="inline" label="RemoteControl" semantic-state="remotecontrol"></mds-button>
-        </div>
-      </div>
-    </div>
+    <div class="demo-label">Button Varianten × States</div>
+    <table class="demo-matrix">
+      <thead>
+        <tr>
+          <th>Variante</th>
+          <th>Default</th>
+          <th>Hover</th>
+          <th>Focus</th>
+          <th>Pressed</th>
+          <th>Disabled</th>
+          <th>Destructive</th>
+          <th>RemoteControl</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Primary</th>
+          <td><mds-button type="primary" label="Primary"></mds-button></td>
+          <td><mds-button type="primary" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="primary" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="primary" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="primary" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="primary" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="primary" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr>
+          <th>Secondary</th>
+          <td><mds-button type="secondary" label="Secondary"></mds-button></td>
+          <td><mds-button type="secondary" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="secondary" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="secondary" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="secondary" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="secondary" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="secondary" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr>
+          <th>Tertiary</th>
+          <td><mds-button type="tertiary" label="Tertiary"></mds-button></td>
+          <td><mds-button type="tertiary" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="tertiary" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="tertiary" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="tertiary" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="tertiary" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="tertiary" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+        <tr>
+          <th>Inline</th>
+          <td><mds-button type="inline" label="Inline"></mds-button></td>
+          <td><mds-button type="inline" label="Hover" interaction-state="hover"></mds-button></td>
+          <td><mds-button type="inline" label="Focus" interaction-state="focus"></mds-button></td>
+          <td><mds-button type="inline" label="Pressed" interaction-state="pressed"></mds-button></td>
+          <td><mds-button type="inline" label="Disabled" interaction-state="disabled"></mds-button></td>
+          <td><mds-button type="inline" label="Destructive" semantic-state="destructive"></mds-button></td>
+          <td><mds-button type="inline" label="Remote" semantic-state="remotecontrol"></mds-button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="demo-section">
-    <div class="demo-label">FAB Varianten & States</div>
-    <div class="demo-grid">
-      <div class="demo-card">
-        <div class="demo-label">FAB Large</div>
-        <div class="demo-row">
-          <mds-fab size="lg"></mds-fab>
-          <mds-fab size="lg" interaction-state="hover"></mds-fab>
-          <mds-fab size="lg" interaction-state="focus"></mds-fab>
-          <mds-fab size="lg" interaction-state="pressed"></mds-fab>
-          <mds-fab size="lg" interaction-state="disabled"></mds-fab>
-        </div>
-        <div class="demo-row">
-          <mds-fab size="lg" semantic-state="destructive"></mds-fab>
-          <mds-fab size="lg" semantic-state="remotecontrol"></mds-fab>
-        </div>
-      </div>
-      <div class="demo-card">
-        <div class="demo-label">FAB Medium</div>
-        <div class="demo-row">
-          <mds-fab size="md"></mds-fab>
-          <mds-fab size="md" interaction-state="hover"></mds-fab>
-          <mds-fab size="md" interaction-state="focus"></mds-fab>
-          <mds-fab size="md" interaction-state="pressed"></mds-fab>
-          <mds-fab size="md" interaction-state="disabled"></mds-fab>
-        </div>
-        <div class="demo-row">
-          <mds-fab size="md" semantic-state="destructive"></mds-fab>
-          <mds-fab size="md" semantic-state="remotecontrol"></mds-fab>
-        </div>
-      </div>
-    </div>
+    <div class="demo-label">FAB Varianten × States</div>
+    <table class="demo-matrix">
+      <thead>
+        <tr>
+          <th>Größe</th>
+          <th>Default</th>
+          <th>Hover</th>
+          <th>Focus</th>
+          <th>Pressed</th>
+          <th>Disabled</th>
+          <th>Destructive</th>
+          <th>RemoteControl</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Large</th>
+          <td><mds-fab size="lg"></mds-fab></td>
+          <td><mds-fab size="lg" interaction-state="hover"></mds-fab></td>
+          <td><mds-fab size="lg" interaction-state="focus"></mds-fab></td>
+          <td><mds-fab size="lg" interaction-state="pressed"></mds-fab></td>
+          <td><mds-fab size="lg" interaction-state="disabled"></mds-fab></td>
+          <td><mds-fab size="lg" semantic-state="destructive"></mds-fab></td>
+          <td><mds-fab size="lg" semantic-state="remotecontrol"></mds-fab></td>
+        </tr>
+        <tr>
+          <th>Medium</th>
+          <td><mds-fab size="md"></mds-fab></td>
+          <td><mds-fab size="md" interaction-state="hover"></mds-fab></td>
+          <td><mds-fab size="md" interaction-state="focus"></mds-fab></td>
+          <td><mds-fab size="md" interaction-state="pressed"></mds-fab></td>
+          <td><mds-fab size="md" interaction-state="disabled"></mds-fab></td>
+          <td><mds-fab size="md" semantic-state="destructive"></mds-fab></td>
+          <td><mds-fab size="md" semantic-state="remotecontrol"></mds-fab></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <script type="module" src="./webcomponents-bundle.js"></script>
   <script>

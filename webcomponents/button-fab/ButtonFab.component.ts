@@ -17,19 +17,9 @@ template.innerHTML = `
     .fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); }
     .fab-sem-remotecontrol { background: var(--mds-color-bg-fab-remotecontrol); }
     .fab-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
-    .fab-icon img {
-      width: 24px !important;
-      height: 24px !important;
-      max-width: 24px !important;
-      max-height: 24px !important;
-      object-fit: contain;
-      display: block;
-    }
-    .fab-label { margin-left: var(--mds-spacing-s, 8px); font-size: 16px; font-family: inherit; color: inherit; }
   </style>
   <button class="fab-root">
     <span class="fab-icon" part="icon"></span>
-    <span class="fab-label" part="label"></span>
   </button>
 `;
 
@@ -58,7 +48,6 @@ export class MdsFab extends HTMLElement {
   update() {
     const btn = this.shadowRoot!.querySelector('button')!;
     const icon = this.shadowRoot!.querySelector('.fab-icon')!;
-    const label = this.shadowRoot!.querySelector('.fab-label')!;
     btn.className = [
       'fab-root',
       `fab-${this.getAttribute('size') || 'lg'}`,
@@ -70,18 +59,6 @@ export class MdsFab extends HTMLElement {
       icon.innerHTML = `<img src="${this.getAttribute('icon-src')}" alt="FAB Icon" style="width: 24px; height: 24px; object-fit: contain;" />`;
     } else {
       icon.innerHTML = '';
-    }
-    // Label
-    if (this.getAttribute('label')) {
-      label.textContent = this.getAttribute('label');
-      (label as HTMLElement).style.display = '';
-    } else {
-      label.textContent = '';
-      (label as HTMLElement).style.display = 'none';
-    }
-    // FAB: Wenn label leer, Icon mittig und größer
-    if (!this.getAttribute('label')) {
-      icon.querySelector('img')?.setAttribute('style', 'width: 40px; height: 40px; object-fit: contain;');
     }
   }
 }

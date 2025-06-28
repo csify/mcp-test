@@ -5,10 +5,12 @@
   --mds-color-bg-fab-pressed
   --mds-color-bg-fab-disabled
   --mds-color-bg-fab-destructive
-  --mds-color-text-fab
-  --mds-color-text-fab-disabled
-  --mds-radius-circle
+  --mds-color-bg-fab-remotecontrol
+  --mds-color-icon-fab
+  --mds-color-icon-fab-disabled
+  --mds-shadow-focus
   --mds-shadow-fab
+  --mds-radius-circle
   --mds-spacing-s
   --mds-spacing-m
   ...
@@ -21,7 +23,7 @@
   border-radius: var(--mds-radius-circle, 50%);
   box-shadow: var(--mds-shadow-fab);
   background: var(--mds-color-bg-fab);
-  color: var(--mds-color-text-fab);
+  color: var(--mds-color-icon-fab);
   border: none;
   padding: var(--mds-spacing-s, 12px);
   transition: background 0.2s, box-shadow 0.2s;
@@ -30,18 +32,23 @@
 .fab-md { width: 40px; height: 40px; }
 .fab-lg { width: 56px; height: 56px; }
 
-.fab-default { background: var(--mds-color-bg-fab); color: var(--mds-color-text-fab); }
+/* --- Interaktionszustände --- */
+.fab-default { background: var(--mds-color-bg-fab); color: var(--mds-color-icon-fab); }
 .fab-hover { background: var(--mds-color-bg-fab-hover); }
-.fab-focus, .fab-focus-visible { box-shadow: 0 0 0 4px var(--mds-shadow-focus); }
+.fab-focus { box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
+.fab-focus.fab-hover { background: var(--mds-color-bg-fab-hover); box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
 .fab-pressed { background: var(--mds-color-bg-fab-pressed); }
+.fab-focus.fab-pressed { background: var(--mds-color-bg-fab-pressed); box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
 .fab-disabled, .fab-sem-disabled {
   background: var(--mds-color-bg-fab-disabled);
-  color: var(--mds-color-text-fab-disabled);
+  color: var(--mds-color-icon-fab-disabled);
   cursor: not-allowed;
   opacity: 0.6;
 }
-.fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); color: var(--mds-color-text-destructive); }
-.fab-sem-remotecontrol { border: 2px solid var(--mds-color-border-remotecontrol); }
+
+/* --- Semantische States --- */
+.fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); }
+.fab-sem-remotecontrol { background: var(--mds-color-bg-fab-remotecontrol); }
 
 .fab-icon {
   width: 24px;

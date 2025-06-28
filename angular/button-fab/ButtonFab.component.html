@@ -1,0 +1,10 @@
+<button
+  class="fab-root fab-{{size}} fab-{{interactionState}} fab-sem-{{semanticState}}"
+  [attr.tabindex]="interactionState !== 'disabled' && semanticState !== 'disabled' ? 0 : -1"
+  [disabled]="interactionState === 'disabled' || semanticState === 'disabled'"
+>
+  <span class="fab-icon" style="font-size: 24px; line-height: 1;">
+    😊
+  </span>
+  <span *ngIf="label" class="fab-label">{{label}}</span>
+</button>

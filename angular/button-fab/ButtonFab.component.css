@@ -20,12 +20,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--mds-radius-circle, 50%);
+  border-radius: var(--mds-radius-circle);
   box-shadow: var(--mds-shadow-fab);
   background: var(--mds-color-bg-fab);
   color: var(--mds-color-icon-fab);
   border: none;
-  padding: var(--mds-spacing-s, 12px);
+  padding: var(--mds-spacing-s);
   transition: background 0.2s, box-shadow 0.2s;
 }
 
@@ -34,11 +34,9 @@
 
 /* --- Interaktionszustände --- */
 .fab-default { background: var(--mds-color-bg-fab); color: var(--mds-color-icon-fab); }
-.fab-hover { background: var(--mds-color-bg-fab-hover); }
-.fab-focus { box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
-.fab-focus.fab-hover { background: var(--mds-color-bg-fab-hover); box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
-.fab-pressed { background: var(--mds-color-bg-fab-pressed); }
-.fab-focus.fab-pressed { background: var(--mds-color-bg-fab-pressed); box-shadow: 0 0 0 4px var(--mds-shadow-focus), var(--mds-shadow-fab); }
+.fab-hover { background: var(--mds-color-bg-fab-hover); color: var(--mds-color-icon-fab); }
+.fab-focus { box-shadow: 0 0 0 4px var(--mds-color-bg-fab-hover), var(--mds-shadow-fab); }
+.fab-pressed { background: var(--mds-color-bg-fab-pressed); color: var(--mds-color-icon-fab); }
 .fab-disabled, .fab-sem-disabled {
   background: var(--mds-color-bg-fab-disabled);
   color: var(--mds-color-icon-fab-disabled);
@@ -47,8 +45,8 @@
 }
 
 /* --- Semantische States --- */
-.fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); }
-.fab-sem-remotecontrol { background: var(--mds-color-bg-fab-remotecontrol); }
+.fab-sem-destructive { background: var(--mds-color-bg-fab-destructive); color: var(--mds-color-icon-fab); }
+.fab-sem-remotecontrol { background: var(--mds-color-bg-fab-remotecontrol); color: var(--mds-color-icon-fab); }
 
 .fab-icon {
   width: 24px;
@@ -59,8 +57,23 @@
 }
 
 .fab-label {
-  margin-left: var(--mds-spacing-s, 8px);
+  margin-left: 8px;
   font-size: 16px;
   font-family: inherit;
   color: inherit;
+}
+
+.fab-root.fab-default,
+.fab-root.fab-hover,
+.fab-root.fab-pressed,
+.fab-root.fab-sem-destructive,
+.fab-root.fab-sem-remotecontrol {
+  color: #fff;
+}
+.fab-root.fab-disabled, .fab-root.fab-sem-disabled {
+  color: var(--mds-color-icon-fab-disabled);
+}
+.fab-root .fab-icon svg {
+  fill: currentColor !important;
+  color: currentColor !important;
 }

@@ -6,8 +6,8 @@ export interface ButtonFabProps {
   iconSrc: string;
   label?: string;
   size?: "md" | "lg";
-  interactionState?: "default" | "hover" | "focus" | "pressed" | "disabled";
-  semanticState?: "default" | "destructive" | "disabled";
+  interactionState?: "default" | "hover" | "focus" | "focus-visible" | "pressed" | "disabled";
+  semanticState?: "default" | "destructive" | "disabled" | "remotecontrol";
 }
 
 export const ButtonFab: React.FC<ButtonFabProps> = ({
@@ -21,11 +21,20 @@ export const ButtonFab: React.FC<ButtonFabProps> = ({
     "fab-root",
     `fab-${size}`,
     `fab-${interactionState}`,
-    `fab-sem-${semanticState}`
+    `fab-sem-${semanticState}`,
+    semanticState === "disabled" ? "fab-disabled" : "",
+    interactionState === "hover" ? "fab-hover" : "",
+    interactionState === "focus" ? "fab-focus" : "",
+    interactionState === "focus-visible" ? "fab-focus-visible" : "",
+    interactionState === "pressed" ? "fab-pressed" : "",
   ].join(" ");
 
   return (
-    <button className={classNames} tabIndex={interactionState !== "disabled" ? 0 : -1} disabled={interactionState === "disabled" || semanticState === "disabled"}>
+    <button
+      className={classNames}
+      tabIndex={interactionState !== "disabled" && semanticState !== "disabled" ? 0 : -1}
+      disabled={interactionState === "disabled" || semanticState === "disabled"}
+    >
       <span className="fab-icon">
         <img src={iconSrc} alt="FAB Icon" />
       </span>

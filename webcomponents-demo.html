@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Components Button Demo</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; margin: 0; padding: 2rem; }
+    h1 { margin-bottom: 2rem; }
+    h2 { margin-top: 2rem; }
+    .demo-row { display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; }
+    .demo-bg { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px #0001; }
+    .demo-col { display: flex; flex-direction: column; gap: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Web Components Demo</h1>
+  <section class="demo-bg">
+    <h2>Button States</h2>
+    <div class="demo-row">
+      <mds-button has-icon icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" has-label label="Default"></mds-button>
+      <mds-button has-icon icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" has-label label="Hover" interaction-state="hover"></mds-button>
+      <mds-button has-icon icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" has-label label="Focus" interaction-state="focus"></mds-button>
+      <mds-button has-icon icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" has-label label="Pressed" interaction-state="pressed"></mds-button>
+      <mds-button has-icon icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" has-label label="Disabled" interaction-state="disabled"></mds-button>
+    </div>
+    <h2>Button Semantics</h2>
+    <div class="demo-row">
+      <mds-button has-icon icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" has-label label="Destructive" semantic-state="destructive"></mds-button>
+      <mds-button has-icon icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" has-label label="RemoteControl" semantic-state="remotecontrol"></mds-button>
+    </div>
+  </section>
+  <section class="demo-bg">
+    <h2>FAB States</h2>
+    <div class="demo-row">
+      <mds-fab icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" label="Default"></mds-fab>
+      <mds-fab icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" label="Hover" interaction-state="hover"></mds-fab>
+      <mds-fab icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" label="Focus" interaction-state="focus"></mds-fab>
+      <mds-fab icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" label="Pressed" interaction-state="pressed"></mds-fab>
+      <mds-fab icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" label="Disabled" interaction-state="disabled"></mds-fab>
+    </div>
+    <h2>FAB Semantics</h2>
+    <div class="demo-row">
+      <mds-fab icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" label="Destructive" semantic-state="destructive"></mds-fab>
+      <mds-fab icon-src="https://cdn-icons-png.flaticon.com/512/25/25231.png" label="RemoteControl" semantic-state="remotecontrol"></mds-fab>
+    </div>
+  </section>
+  <script type="module">
+    import './webcomponents/button/Button.component';
+    import './webcomponents/button-fab/ButtonFab.component';
+  </script>
+</body>
+</html>

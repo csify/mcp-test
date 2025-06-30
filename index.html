@@ -6,6 +6,10 @@
   <link id="theme-link" rel="stylesheet" href="./styles/css/themes/mds-base-bright-desktop.css">
   <link rel="stylesheet" href="./styles/button.css">
   <script src="./styles/theme-switcher.js"></script>
+  <script>
+    // Stellt sicher, dass toggleTheme global verfügbar ist
+    window.toggleTheme = window.toggleTheme || this.toggleTheme;
+  </script>
   <style>
     body { font-family: sans-serif; margin: 2rem; }
     .theme-toggle-btn {

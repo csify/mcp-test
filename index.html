@@ -2,11 +2,19 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Button Demo – Nur relevante semantische States</title>
-  <link rel="stylesheet" href="./styles/css/themes/mds-base-bright-desktop.css">
+  <title>MCP Agent Demo</title>
+  <link id="theme-link" rel="stylesheet" href="./styles/css/themes/mds-base-bright-desktop.css">
   <link rel="stylesheet" href="./styles/button.css">
+  <script src="./styles/theme-switcher.js"></script>
   <style>
     body { font-family: sans-serif; margin: 2rem; }
+    .theme-toggle-btn {
+      position: fixed; top: 1.2rem; right: 1.2rem; z-index: 1000;
+      background: #eee; color: #222; border: none; border-radius: 6px;
+      padding: 0.5em 1em; font-size: 1em; cursor: pointer;
+      box-shadow: 0 2px 8px #0001;
+    }
+    body.dark .theme-toggle-btn { background: #222; color: #eee; }
     .demo-grid { display: flex; flex-wrap: wrap; gap: 2rem; }
     .demo-card { border: 1px solid #eee; border-radius: 8px; padding: 1rem; min-width: 340px; margin-bottom: 2rem; background: #fafaff; }
     .demo-card h3 { margin: 0 0 1rem 0; font-size: 1.1em; }
@@ -19,7 +27,8 @@
   </style>
 </head>
 <body>
-  <h1>Button Demo – Nur relevante semantische States</h1>
+  <button class="theme-toggle-btn" onclick="toggleTheme()">🌗 Theme wechseln</button>
+  <h1>MCP Agent Demo</h1>
   <div class="demo-grid">
     <script>
       const semantics = [

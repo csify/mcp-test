@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Button Demo – Alle Permutationen</title>
+  <title>Button Demo – Alle Permutationen & Semantiken</title>
   <link rel="stylesheet" href="./styles/css/themes/mds-base-bright-desktop.css">
   <link rel="stylesheet" href="./styles/button.css">
   <style>
@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <h1>Button Demo – Alle Permutationen</h1>
+  <h1>Button Demo – Alle Permutationen & Semantiken</h1>
   <table class="demo-table">
     <thead>
       <tr>
@@ -28,9 +28,11 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Permutationen: semantic x state x size x icon/label -->
       <script>
-        const semantics = ['primary', 'secondary', 'destructive', 'remotecontrol'];
+        const semantics = [
+          'primary', 'secondary', 'destructive', 'remotecontrol',
+          'success', 'warning', 'info', 'neutral', 'ghost', 'inverse', 'outline'
+        ];
         const states = [
           {cls:'', label:'Default'},
           {cls:'btn-hover', label:'Hover'},

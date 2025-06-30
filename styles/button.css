@@ -64,6 +64,12 @@
 }
 .btn-md, .btn-lg {
   font-size: var(--mds-core-base-font-size-md, 14px);
+}
+.btn-md {
+  min-height: var(--mds-core-device-component-theme-atom-size-md-var, 30px);
+  padding: 0 var(--mds-core-device-component-theme-atom-padding-md-var, 20px);
+}
+.btn-lg {
   min-height: var(--mds-core-device-component-theme-atom-size-lg-var, 40px);
   padding: 0 var(--mds-core-device-component-theme-atom-padding-lg-var, 30px);
 }

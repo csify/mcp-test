@@ -100,6 +100,33 @@ template.innerHTML = `
     .btn.btn-md .btn-icon svg { width: var(--mds-icon-size-button-md, 18px); height: var(--mds-icon-size-button-md, 18px); }
     .btn.btn-sm .btn-icon svg { width: var(--mds-icon-size-button-sm, 16px); height: var(--mds-icon-size-button-sm, 16px); }
     .btn.btn-xs .btn-icon svg { width: var(--mds-icon-size-button-xs, 14px); height: var(--mds-icon-size-button-xs, 14px); }
+    /* Outlines & States */
+    .btn-selected {
+      /* Outer Outline für selected (z.B. 2px solid, Farbe aus Token) */
+      box-shadow: 0 0 0 var(--mds-shadow-selected-width, 2px) var(--mds-shadow-selected, var(--mds-color-border-selected, #6254f7));
+    }
+    .btn-focus, .btn-focus-visible {
+      /* Outer Outline für Focus/Active (z.B. 4px, Farbe aus Token) */
+      box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus, #6254f7);
+    }
+    /* Inner Outline für Semantic States (z.B. Remote Control, Communication, etc.) */
+    .btn-sem-remotecontrol {
+      box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus, #6254f7),
+                  0 0 0 2px var(--mds-color-border-remotecontrol, #00b386) inset;
+    }
+    .btn-sem-communication {
+      box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus, #6254f7),
+                  0 0 0 2px var(--mds-color-border-communication, #007aff) inset;
+    }
+    .btn-sem-error, .btn-sem-destructive {
+      box-shadow: 0 0 0 var(--mds-shadow-focus-width, 4px) var(--mds-shadow-focus, #6254f7),
+                  0 0 0 2px var(--mds-color-border-error, #cc3542) inset;
+    }
+    /* Kombinierbarkeit: selected + semantic (z.B. remotecontrol) */
+    .btn-selected.btn-sem-remotecontrol {
+      box-shadow: 0 0 0 var(--mds-shadow-selected-width, 2px) var(--mds-shadow-selected, var(--mds-color-border-selected, #6254f7)),
+                  0 0 0 2px var(--mds-color-border-remotecontrol, #00b386) inset;
+    }
     /* Destructive, RemoteControl, Disabled, etc. analog ergänzen */
   </style>
   <button class="btn">

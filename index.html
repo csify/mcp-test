@@ -10,9 +10,10 @@
     .demo-grid { display: flex; flex-wrap: wrap; gap: 2rem; }
     .demo-card { border: 1px solid #eee; border-radius: 8px; padding: 1rem; min-width: 260px; margin-bottom: 2rem; }
     .demo-card h3 { margin: 0 0 1rem 0; font-size: 1.1em; }
-    .demo-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .demo-row { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center; }
     .demo-label { font-size: 0.9em; color: #888; }
-    .demo-size-label { font-size: 0.85em; color: #aaa; margin-right: 0.5em; }
+    .demo-size-label { font-size: 0.95em; color: #333; font-weight: bold; min-width: 70px; display: inline-block; }
+    .demo-state-label { font-size: 0.9em; color: #888; min-width: 70px; display: inline-block; }
   </style>
 </head>
 <body>
@@ -30,9 +31,8 @@
         {cls:'btn-disabled', label:'Disabled', disabled:true}
       ];
       const sizes = [
-        {cls:'', label:'Default'},
-        {cls:'btn-small', label:'Small'},
-        {cls:'btn-large', label:'Large'}
+        {cls:'btn-md', label:'atom-size-md'},
+        {cls:'btn-lg', label:'atom-size-lg'}
       ];
       function renderBtn(sem, state, size, icon, label, onlyIcon, onlyLabel) {
         let cls = `btn btn-${sem} ${state.cls} ${size.cls}`.trim();
@@ -49,6 +49,7 @@
         sizes.forEach(size => {
           document.write(`<div class='demo-row'><span class='demo-size-label'>${size.label}</span>`);
           states.forEach(state => {
+            document.write(`<span class='demo-state-label'>${state.label}</span>`);
             document.write(renderBtn(sem,state,size,true,'Button'));
           });
           document.write('</div>');
@@ -57,6 +58,6 @@
       });
     </script>
   </div>
-  <div class="demo-label">Alle Permutationen: Nur relevante semantische States (primary, secondary, destructive, success, remotecontrol) und alle Größen/States</div>
+  <div class="demo-label">Alle Permutationen: Nur relevante semantische States (primary, secondary, destructive, success, remotecontrol) und nur atom-size-md / atom-size-lg</div>
 </body>
 </html>

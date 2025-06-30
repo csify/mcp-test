@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Button Demo – Vanilla & Web Components</title>
-  <link rel="stylesheet" href="./styles/mds-base-bright-desktop.css">
+  <link rel="stylesheet" href="./styles/css/themes/mds-base-bright-desktop.css">
   <link rel="stylesheet" href="./styles/button.css">
   <style>
+    :root {
+      --mds-base-semantic-theme-color-bg-primary: #321850;
+      --mds-base-semantic-theme-color-text-emphasis-invers: #fff;
+      --mds-core-base-component-theme-bg-color: #fff;
+      --mds-base-semantic-theme-color-text-default: #454545;
+      --mds-base-semantic-theme-color-line-default: #ccc;
+      --mds-base-semantic-theme-color-error: #cc3542;
+      --mds-base-semantic-theme-color-remote-control: #008282;
+      --mds-base-semantic-theme-color-active: #6254f7;
+      --mds-base-semantic-theme-color-line-emphasis: #000;
+    }
+
     body { font-family: sans-serif; margin: 2rem; }
     .demo-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
     .demo-section { margin-bottom: 2rem; }

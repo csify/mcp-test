@@ -28,6 +28,11 @@
 .btn-remotecontrol {
   outline: 2px solid var(--mds-base-semantic-theme-color-remote-control, #008282);
 }
+.btn-remotecontrol.btn-focus,
+.btn-remotecontrol.btn-selected {
+  outline: 4px solid var(--mds-base-semantic-theme-color-active, #6254f7);
+  box-shadow: 0 0 0 2px var(--mds-base-semantic-theme-color-remote-control, #008282);
+}
 .btn-hover, .btn:hover:not(:disabled) {
   filter: brightness(0.92);
   box-shadow: 0 2px 8px 0 rgba(50,24,80,0.10);
@@ -57,13 +62,8 @@
   background: var(--mds-base-semantic-theme-color-success, #1bbf5c);
   color: var(--mds-base-semantic-theme-color-text-emphasis-invers, #fff);
 }
-.btn-md {
+.btn-md, .btn-lg {
   font-size: var(--mds-core-base-font-size-md, 14px);
-  min-height: var(--mds-core-device-component-theme-atom-size-md-var, 30px);
-  padding: 0 var(--mds-core-device-component-theme-atom-padding-md-var, 20px);
-}
-.btn-lg {
-  font-size: var(--mds-core-base-font-size-lg, 20px);
   min-height: var(--mds-core-device-component-theme-atom-size-lg-var, 40px);
   padding: 0 var(--mds-core-device-component-theme-atom-padding-lg-var, 30px);
 }

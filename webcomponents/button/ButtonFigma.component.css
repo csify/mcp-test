@@ -1,0 +1,51 @@
+.figma-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s, opacity 0.2s;
+  font-family: 'Weissenhof Grotesk Variable', sans-serif;
+  font-weight: 390;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 2px;
+  padding: 0 20px;
+  gap: 5px;
+  min-height: 40px;
+}
+.figma-btn-primary {
+  background: var(--mds-base-semantic-theme-color-bg-primary, #321850);
+  color: var(--mds-base-semantic-theme-color-text-emphasis-invers, #fff);
+}
+.figma-btn-secondary, .figma-btn-inline, .figma-btn-tertiary {
+  background: var(--mds-core-base-component-theme-bg-color, #fff);
+  color: var(--mds-base-semantic-theme-color-text-default, #454545);
+}
+.figma-btn-destructive {
+  background: var(--mds-base-semantic-theme-color-error, #cc3542);
+  color: var(--mds-base-semantic-theme-color-text-emphasis-invers, #fff);
+}
+.figma-btn-remotecontrol {
+  outline: 2px solid var(--mds-base-semantic-theme-color-remote-control, #008282);
+}
+.figma-btn-hover {
+  opacity: 0.7;
+}
+.figma-btn-selected {
+  outline: 4px solid var(--mds-base-semantic-theme-color-active, #6254f7);
+}
+.figma-btn-focus {
+  outline: 4px solid var(--mds-base-semantic-theme-color-line-emphasis, #000);
+}
+.figma-btn-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.figma-btn-icon {
+  width: 16px;
+  height: 16px;
+  background: #ccc;
+  border-radius: 2px;
+  display: inline-block;
+}

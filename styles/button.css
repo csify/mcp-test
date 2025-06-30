@@ -59,7 +59,7 @@
   margin-right: 6px;
 }
 .btn-success {
-  background: var(--mds-base-semantic-theme-color-success, #1bbf5c);
+  background: var(--mds-core-base-semantic-theme-color-success-var, #20852a);
   color: var(--mds-base-semantic-theme-color-text-emphasis-invers, #fff);
 }
 .btn-md, .btn-lg {

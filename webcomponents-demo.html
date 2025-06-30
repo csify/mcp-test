@@ -4,264 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MDS Web Components Demo</title>
+  <link rel="stylesheet" href="./styles/css/themes/mds-base-bright-desktop.css" id="theme-bright" />
+  <link rel="stylesheet" href="./styles/css/themes/mds-base-dark-desktop.css" id="theme-dark" disabled />
   <style>
-    :root {
-      /* Figma Base Styles: Light */
-      --mds-color-bg-primary: var(--mds-ref-palette-primary-500, #7C3AED);
-      --mds-color-bg-primary-hover: var(--mds-ref-palette-primary-600, #6D28D9);
-      --mds-color-bg-primary-pressed: var(--mds-ref-palette-primary-700, #5B21B6);
-      --mds-color-bg-primary-disabled: var(--mds-ref-palette-primary-100, #E9D5FF);
-      --mds-color-bg-secondary: var(--mds-ref-palette-neutral-0, #fff);
-      --mds-color-bg-secondary-hover: var(--mds-ref-palette-neutral-100, #F3F4F6);
-      --mds-color-bg-secondary-pressed: var(--mds-ref-palette-neutral-200, #E5E7EB);
-      --mds-color-bg-secondary-disabled: var(--mds-ref-palette-neutral-100, #F3F4F6);
-      --mds-color-bg-tertiary: var(--mds-ref-palette-neutral-100, #F3F4F6);
-      --mds-color-bg-tertiary-hover: var(--mds-ref-palette-neutral-200, #E5E7EB);
-      --mds-color-bg-tertiary-pressed: var(--mds-ref-palette-neutral-300, #D1D5DB);
-      --mds-color-bg-tertiary-disabled: var(--mds-ref-palette-neutral-100, #F3F4F6);
-      --mds-color-bg-inline: transparent;
-      --mds-color-bg-inline-hover: var(--mds-ref-palette-neutral-100, #F3F4F6);
-      --mds-color-bg-inline-pressed: var(--mds-ref-palette-neutral-200, #E5E7EB);
-      --mds-color-bg-inline-disabled: transparent;
-      --mds-color-bg-destructive: var(--mds-ref-palette-error-500, #EF4444);
-      --mds-color-bg-remotecontrol: var(--mds-ref-palette-success-500, #10B981);
-      --mds-color-border-primary: var(--mds-ref-palette-primary-500, #7C3AED);
-      --mds-color-border-secondary: var(--mds-ref-palette-neutral-300, #D1D5DB);
-      --mds-color-border-tertiary: var(--mds-ref-palette-neutral-300, #D1D5DB);
-      --mds-color-border-inline: transparent;
-      --mds-color-border-remotecontrol: var(--mds-ref-palette-success-500, #10B981);
-      --mds-color-text-default-invers: var(--mds-ref-palette-neutral-0, #fff);
-      --mds-color-text-default: var(--mds-ref-palette-neutral-900, #111827);
-      --mds-color-text-disabled: var(--mds-ref-palette-neutral-400, #9CA3AF);
-      --mds-radius-button: 6px;
-      --mds-spacing-button-padding-vertical: 6px;
-      --mds-spacing-button-padding-horizontal: 20px;
-      --mds-spacing-button-gap: 6px;
-      --mds-shadow-focus: 0 0 0 4px #7C3AED44;
-      --mds-font-family-button: 'Weissenhof Grotesk Variable', sans-serif;
-      --mds-font-size-button: 14px;
-      --mds-font-weight-button: 390;
-      --mds-line-height-button: 20px;
-      --mds-icon-size-button: 20px;
-      --mds-border-width-primary: 1px;
-      --mds-border-width-secondary: 1px;
-      --mds-border-width-tertiary: 1px;
-      --mds-border-width-inline: 0;
-      --mds-border-width-remotecontrol: 2px;
-      /* FAB */
-      --mds-radius-fab: 50%;
-      --mds-shadow-fab: 0 2px 8px #0001;
-      --mds-size-fab-md: 40px;
-      --mds-size-fab-lg: 56px;
-      --mds-spacing-fab-padding: 12px;
-      --mds-icon-size-fab: 24px;
-      --mds-color-bg-fab: #7C3AED;
-      --mds-color-bg-fab-hover: #6D28D9;
-      --mds-color-bg-fab-pressed: #5B21B6;
-      --mds-color-bg-fab-disabled: #E9D5FF;
-      --mds-color-bg-fab-destructive: #EF4444;
-      --mds-color-bg-fab-remotecontrol: #10B981;
-      --mds-color-icon-fab: #fff;
-      --mds-color-icon-fab-disabled: #9CA3AF;
-      --mds-opacity-fab-disabled: 0.6;
-      --mds-atom-size-lg: 40px;
-      --mds-atom-size-md: 32px;
-      --mds-atom-size-sm: 28px;
-      --mds-atom-size-xs: 24px;
-      --mds-spacing-button-padding-vertical-lg: 10px;
-      --mds-spacing-button-padding-horizontal-lg: 20px;
-      --mds-font-size-button-lg: 16px;
-      --mds-icon-size-button-lg: 20px;
-      --mds-spacing-button-padding-vertical-md: 8px;
-      --mds-spacing-button-padding-horizontal-md: 16px;
-      --mds-font-size-button-md: 14px;
-      --mds-icon-size-button-md: 18px;
-      --mds-spacing-button-padding-vertical-sm: 6px;
-      --mds-spacing-button-padding-horizontal-sm: 12px;
-      --mds-font-size-button-sm: 13px;
-      --mds-icon-size-button-sm: 16px;
-      --mds-spacing-button-padding-vertical-xs: 4px;
-      --mds-spacing-button-padding-horizontal-xs: 8px;
-      --mds-font-size-button-xs: 12px;
-      --mds-icon-size-button-xs: 14px;
-    }
-    [data-theme="dark"] {
-      /* Figma Base Styles: Dark */
-      --mds-color-bg-primary: #4F378B;
-      --mds-color-bg-primary-hover: #3B2670;
-      --mds-color-bg-primary-pressed: #2A1B4F;
-      --mds-color-bg-primary-disabled: #3B2670;
-      --mds-color-bg-secondary: #18181B;
-      --mds-color-bg-secondary-hover: #27272A;
-      --mds-color-bg-secondary-pressed: #18181B;
-      --mds-color-bg-secondary-disabled: #27272A;
-      --mds-color-bg-tertiary: #27272A;
-      --mds-color-bg-tertiary-hover: #18181B;
-      --mds-color-bg-tertiary-pressed: #18181B;
-      --mds-color-bg-tertiary-disabled: #27272A;
-      --mds-color-bg-inline: transparent;
-      --mds-color-bg-inline-hover: #27272A;
-      --mds-color-bg-inline-pressed: #18181B;
-      --mds-color-bg-inline-disabled: transparent;
-      --mds-color-bg-destructive: #B91C1C;
-      --mds-color-bg-remotecontrol: #059669;
-      --mds-color-border-primary: #4F378B;
-      --mds-color-border-secondary: #27272A;
-      --mds-color-border-tertiary: #27272A;
-      --mds-color-border-inline: transparent;
-      --mds-color-border-remotecontrol: #059669;
-      --mds-color-text-default-invers: #fff;
-      --mds-color-text-default: #F3F4F6;
-      --mds-color-text-disabled: #6B7280;
-      --mds-color-bg-fab: #4F378B;
-      --mds-color-bg-fab-hover: #3B2670;
-      --mds-color-bg-fab-pressed: #2A1B4F;
-      --mds-color-bg-fab-disabled: #3B2670;
-      --mds-color-bg-fab-destructive: #B91C1C;
-      --mds-color-bg-fab-remotecontrol: #059669;
-      --mds-color-icon-fab: #fff;
-      --mds-color-icon-fab-disabled: #6B7280;
-      --mds-opacity-fab-disabled: 0.6;
-    }
     body {
-      font-family: var(--mds-font-family-button);
-      background: var(--mds-color-bg-secondary);
-      color: var(--mds-color-text-default);
+      font-family: var(--mds-font-family-button, sans-serif);
+      background: var(--mds-color-bg-secondary, #fff);
+      color: var(--mds-color-text-default, #111827);
       margin: 0;
       padding: 2rem;
       transition: background 0.2s, color 0.2s;
     }
     h1 { margin-bottom: 2rem; }
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 10;
-      background: var(--mds-color-bg-secondary);
-      color: var(--mds-color-text-default);
-      border: 1px solid var(--mds-color-border-secondary);
-      border-radius: 6px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 2px 8px #0001;
-      transition: background 0.2s, color 0.2s;
-    }
-    .demo-flexgrid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .demo-row {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .demo-variant {
-      min-width: 120px;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-right: 1rem;
-    }
-    .demo-section {
-      margin-bottom: 3rem;
-    }
+    .theme-switcher { position: fixed; top: 1rem; right: 1rem; z-index: 100; }
+    .demo-state-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
   </style>
 </head>
-<body>
-  <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
-  <h1>MDS Web Components – Systematische Demo</h1>
+<body class="theme-bright">
+  <div class="theme-switcher">
+    <button onclick="setTheme('bright')">Bright</button>
+    <button onclick="setTheme('dark')">Dark</button>
+  </div>
+  <h1>MDS Web Components – States & Outlines</h1>
   <div class="demo-section">
-    <div class="demo-label">Button Varianten × States × Größen</div>
-    <div class="demo-flexgrid">
-      <!-- Für jede Variante und jede Größe eine eigene Zeile -->
-      <div class="demo-row"><div class="demo-variant">Primary lg</div>
-        <mds-button type="primary" size="lg" has-label label="Default"></mds-button>
-        <mds-button type="primary" size="lg" has-label label="Hover" interaction-state="hover"></mds-button>
-        <mds-button type="primary" size="lg" has-label label="Focus" interaction-state="focus"></mds-button>
-        <mds-button type="primary" size="lg" has-label label="Pressed" interaction-state="pressed"></mds-button>
-        <mds-button type="primary" size="lg" has-label label="Disabled" interaction-state="disabled"></mds-button>
-        <mds-button type="primary" size="lg" has-label label="Destructive" semantic-state="destructive"></mds-button>
-        <mds-button type="primary" size="lg" has-label label="Remote" semantic-state="remotecontrol"></mds-button>
-      </div>
-      <div class="demo-row"><div class="demo-variant">Primary md</div>
-        <mds-button type="primary" size="md" has-label label="Default"></mds-button>
-        <mds-button type="primary" size="md" has-label label="Hover" interaction-state="hover"></mds-button>
-        <mds-button type="primary" size="md" has-label label="Focus" interaction-state="focus"></mds-button>
-        <mds-button type="primary" size="md" has-label label="Pressed" interaction-state="pressed"></mds-button>
-        <mds-button type="primary" size="md" has-label label="Disabled" interaction-state="disabled"></mds-button>
-        <mds-button type="primary" size="md" has-label label="Destructive" semantic-state="destructive"></mds-button>
-        <mds-button type="primary" size="md" has-label label="Remote" semantic-state="remotecontrol"></mds-button>
-      </div>
-      <div class="demo-row"><div class="demo-variant">Primary sm</div>
-        <mds-button type="primary" size="sm" has-label label="Default"></mds-button>
-        <mds-button type="primary" size="sm" has-label label="Hover" interaction-state="hover"></mds-button>
-        <mds-button type="primary" size="sm" has-label label="Focus" interaction-state="focus"></mds-button>
-        <mds-button type="primary" size="sm" has-label label="Pressed" interaction-state="pressed"></mds-button>
-        <mds-button type="primary" size="sm" has-label label="Disabled" interaction-state="disabled"></mds-button>
-        <mds-button type="primary" size="sm" has-label label="Destructive" semantic-state="destructive"></mds-button>
-        <mds-button type="primary" size="sm" has-label label="Remote" semantic-state="remotecontrol"></mds-button>
-      </div>
-      <div class="demo-row"><div class="demo-variant">Primary xs</div>
-        <mds-button type="primary" size="xs" has-label label="Default"></mds-button>
-        <mds-button type="primary" size="xs" has-label label="Hover" interaction-state="hover"></mds-button>
-        <mds-button type="primary" size="xs" has-label label="Focus" interaction-state="focus"></mds-button>
-        <mds-button type="primary" size="xs" has-label label="Pressed" interaction-state="pressed"></mds-button>
-        <mds-button type="primary" size="xs" has-label label="Disabled" interaction-state="disabled"></mds-button>
-        <mds-button type="primary" size="xs" has-label label="Destructive" semantic-state="destructive"></mds-button>
-        <mds-button type="primary" size="xs" has-label label="Remote" semantic-state="remotecontrol"></mds-button>
-      </div>
-      <!-- Analog für Secondary, Tertiary, Inline ... -->
+    <div class="demo-state-row">
+      <mds-button has-label label="Default"></mds-button>
+      <mds-button has-label label="Selected" interaction-state="selected"></mds-button>
+      <mds-button has-label label="Focus" interaction-state="focus"></mds-button>
+      <mds-button has-label label="RemoteCtrl" semantic-state="remotecontrol"></mds-button>
+      <mds-button has-label label="Selected+Remote" interaction-state="selected" semantic-state="remotecontrol"></mds-button>
+      <mds-button has-label label="Error" semantic-state="destructive"></mds-button>
+      <mds-button has-label label="Selected+Error" interaction-state="selected" semantic-state="destructive"></mds-button>
+    </div>
+    <div class="demo-state-row">
+      <mds-button has-label label="Disabled" interaction-state="disabled"></mds-button>
+      <mds-button has-label label="Pressed" interaction-state="pressed"></mds-button>
+      <mds-button has-label label="Hover" interaction-state="hover"></mds-button>
     </div>
   </div>
-  <div class="demo-section">
-    <div class="demo-label">FAB Varianten × States</div>
-    <table class="demo-matrix">
-      <thead>
-        <tr>
-          <th>Größe</th>
-          <th>Default</th>
-          <th>Hover</th>
-          <th>Focus</th>
-          <th>Pressed</th>
-          <th>Disabled</th>
-          <th>Destructive</th>
-          <th>RemoteControl</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Large</th>
-          <td><mds-fab size="lg"></mds-fab></td>
-          <td><mds-fab size="lg" interaction-state="hover"></mds-fab></td>
-          <td><mds-fab size="lg" interaction-state="focus"></mds-fab></td>
-          <td><mds-fab size="lg" interaction-state="pressed"></mds-fab></td>
-          <td><mds-fab size="lg" interaction-state="disabled"></mds-fab></td>
-          <td><mds-fab size="lg" semantic-state="destructive"></mds-fab></td>
-          <td><mds-fab size="lg" semantic-state="remotecontrol"></mds-fab></td>
-        </tr>
-        <tr>
-          <th>Medium</th>
-          <td><mds-fab size="md"></mds-fab></td>
-          <td><mds-fab size="md" interaction-state="hover"></mds-fab></td>
-          <td><mds-fab size="md" interaction-state="focus"></mds-fab></td>
-          <td><mds-fab size="md" interaction-state="pressed"></mds-fab></td>
-          <td><mds-fab size="md" interaction-state="disabled"></mds-fab></td>
-          <td><mds-fab size="md" semantic-state="destructive"></mds-fab></td>
-          <td><mds-fab size="md" semantic-state="remotecontrol"></mds-fab></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <script type="module" src="./webcomponents-bundle.js"></script>
+  <script type="module">
+    import './webcomponents/button/Button.component.js';
+    import './webcomponents/button-fab/ButtonFab.component.js';
+  </script>
   <script>
-    const themeToggle = document.getElementById('themeToggle');
-    let dark = false;
-    themeToggle.addEventListener('click', () => {
-      dark = !dark;
-      document.documentElement.setAttribute('data-theme', dark ? 'dark' : '');
-      themeToggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    });
+    function setTheme(theme) {
+      document.body.classList.remove('theme-bright', 'theme-dark');
+      document.body.classList.add('theme-' + theme);
+      document.getElementById('theme-bright').disabled = theme !== 'bright';
+      document.getElementById('theme-dark').disabled = theme !== 'dark';
+    }
   </script>
 </body>
 </html>

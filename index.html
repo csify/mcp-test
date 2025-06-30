@@ -8,10 +8,12 @@
   <style>
     body { font-family: sans-serif; margin: 2rem; }
     .demo-grid { display: flex; flex-wrap: wrap; gap: 2rem; }
-    .demo-card { border: 1px solid #eee; border-radius: 8px; padding: 1rem; min-width: 260px; margin-bottom: 2rem; }
+    .demo-card { border: 1px solid #eee; border-radius: 8px; padding: 1rem; min-width: 340px; margin-bottom: 2rem; background: #fafaff; }
     .demo-card h3 { margin: 0 0 1rem 0; font-size: 1.1em; }
-    .demo-row { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: center; }
-    .demo-label { font-size: 0.9em; color: #888; }
+    .demo-table { width: 100%; border-collapse: collapse; }
+    .demo-table th, .demo-table td { padding: 0.3em 0.5em; text-align: center; }
+    .demo-table th { background: #f3f3f3; font-size: 0.95em; }
+    .demo-table tr:nth-child(even) { background: #f8f8f8; }
     .demo-size-label { font-size: 0.95em; color: #333; font-weight: bold; min-width: 70px; display: inline-block; }
     .demo-state-label { font-size: 0.9em; color: #888; min-width: 70px; display: inline-block; }
   </style>
@@ -34,7 +36,7 @@
         {cls:'btn-md', label:'atom-size-md'},
         {cls:'btn-lg', label:'atom-size-lg'}
       ];
-      function renderBtn(sem, state, size, icon, label, onlyIcon, onlyLabel) {
+      function renderBtn(sem, state, size, icon, label) {
         let cls = `btn btn-${sem} ${state.cls} ${size.cls}`.trim();
         let html = `<button class='${cls}'`;
         if(state.disabled) html += ' disabled';
@@ -47,17 +49,22 @@
       semantics.forEach(sem => {
         document.write(`<div class='demo-card'><h3>${sem}</h3>`);
         sizes.forEach(size => {
-          document.write(`<div class='demo-row'><span class='demo-size-label'>${size.label}</span>`);
+          document.write(`<div class='demo-size-label'>${size.label}</div>`);
+          document.write(`<table class='demo-table'><thead><tr><th>State</th><th>Icon + Text</th><th>Icon only</th><th>Text only</th></tr></thead><tbody>`);
           states.forEach(state => {
-            document.write(`<span class='demo-state-label'>${state.label}</span>`);
-            document.write(renderBtn(sem,state,size,true,'Button'));
+            document.write('<tr>');
+            document.write(`<td class='demo-state-label'>${state.label}</td>`);
+            document.write(`<td>${renderBtn(sem,state,size,true,'Button')}</td>`);
+            document.write(`<td>${renderBtn(sem,state,size,true,'')}</td>`);
+            document.write(`<td>${renderBtn(sem,state,size,false,'Button')}</td>`);
+            document.write('</tr>');
           });
-          document.write('</div>');
+          document.write('</tbody></table>');
         });
         document.write('</div>');
       });
     </script>
   </div>
-  <div class="demo-label">Alle Permutationen: Nur relevante semantische States (primary, secondary, destructive, success, remotecontrol) und nur atom-size-md / atom-size-lg</div>
+  <div class="demo-label">Alle Permutationen: Nur relevante semantische States (primary, secondary, destructive, success, remotecontrol), atom-size-md / atom-size-lg, alle Varianten (Icon+Text, Icon only, Text only)</div>
 </body>
 </html>

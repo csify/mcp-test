@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Demo</title>
+  <link rel="stylesheet" href="./styles/button.css">
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    .demo-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .demo-section { margin-bottom: 2rem; }
+    h2 { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>Button Demo – Alle Varianten</h1>
+
+  <div class="demo-section">
+    <h2>React</h2>
+    <div class="demo-row">
+      <!-- Beispiel: React-Komponente als Custom Element gerendert (nur symbolisch) -->
+      <div><code>&lt;Button type="primary" label="Primary" /&gt;</code></div>
+      <div><code>&lt;Button type="secondary" label="Secondary" /&gt;</code></div>
+      <div><code>&lt;Button type="destructive" label="Destructive" /&gt;</code></div>
+      <div><code>&lt;Button type="remotecontrol" label="Remote" /&gt;</code></div>
+    </div>
+    <div class="demo-row">
+      <div><code>&lt;Button type="primary" label="Hover" interactionState="hover" /&gt;</code></div>
+      <div><code>&lt;Button type="primary" label="Focus" interactionState="focus" /&gt;</code></div>
+      <div><code>&lt;Button type="primary" label="Selected" interactionState="selected" /&gt;</code></div>
+      <div><code>&lt;Button type="primary" label="Disabled" disabled /&gt;</code></div>
+    </div>
+    <div class="demo-row">
+      <div><code>&lt;Button type="primary" label="Icon" icon="★" /&gt;</code></div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Angular</h2>
+    <div class="demo-row">
+      <div><code>&lt;app-button type="primary" label="Primary"&gt;&lt;/app-button&gt;</code></div>
+      <div><code>&lt;app-button type="secondary" label="Secondary"&gt;&lt;/app-button&gt;</code></div>
+      <div><code>&lt;app-button type="destructive" label="Destructive"&gt;&lt;/app-button&gt;</code></div>
+      <div><code>&lt;app-button type="remotecontrol" label="Remote"&gt;&lt;/app-button&gt;</code></div>
+    </div>
+    <div class="demo-row">
+      <div><code>&lt;app-button type="primary" label="Hover" interactionState="hover"&gt;&lt;/app-button&gt;</code></div>
+      <div><code>&lt;app-button type="primary" label="Focus" interactionState="focus"&gt;&lt;/app-button&gt;</code></div>
+      <div><code>&lt;app-button type="primary" label="Selected" interactionState="selected"&gt;&lt;/app-button&gt;</code></div>
+      <div><code>&lt;app-button type="primary" label="Disabled" [disabled]="true"&gt;&lt;/app-button&gt;</code></div>
+    </div>
+    <div class="demo-row">
+      <div><code>&lt;app-button type="primary" label="Icon" icon="★"&gt;&lt;/app-button&gt;</code></div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Web Components</h2>
+    <div class="demo-row">
+      <wc-button type="primary" label="Primary"></wc-button>
+      <wc-button type="secondary" label="Secondary"></wc-button>
+      <wc-button type="destructive" label="Destructive"></wc-button>
+      <wc-button type="remotecontrol" label="Remote"></wc-button>
+    </div>
+    <div class="demo-row">
+      <wc-button type="primary" label="Hover" interactionstate="hover"></wc-button>
+      <wc-button type="primary" label="Focus" interactionstate="focus"></wc-button>
+      <wc-button type="primary" label="Selected" interactionstate="selected"></wc-button>
+      <wc-button type="primary" label="Disabled" disabled></wc-button>
+    </div>
+    <div class="demo-row">
+      <wc-button type="primary" label="Icon" icon="★"></wc-button>
+    </div>
+    <script type="module" src="./webcomponents/button/button.js"></script>
+  </div>
+
+  <p style="margin-top:3rem;color:#888;font-size:0.9em;">Hinweis: Die React- und Angular-Komponenten sind hier als Codebeispiele gelistet. Die Web Component ist live gerendert.</p>
+</body>
+</html>

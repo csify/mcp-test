@@ -5,14 +5,14 @@
   border: none;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s, opacity 0.2s;
-  font-family: 'Weissenhof Grotesk Variable', sans-serif;
-  font-weight: 390;
-  line-height: 20px;
-  border-radius: 2px;
+  font-family: var(--mds-core-base-font-family-default, 'Weissenhof Grotesk Variable'), sans-serif;
+  font-weight: var(--mds-core-base-font-weight-normal, 390);
+  font-size: var(--mds-core-base-font-size-md, 14px);
+  line-height: var(--mds-core-base-font-line-height-md, 20px);
+  border-radius: var(--mds-core-device-component-theme-atom-border-radius-default-var, 2px);
+  padding: 0 var(--mds-core-device-component-theme-atom-padding-md-var, 20px);
   gap: 5px;
   min-height: var(--mds-core-device-component-theme-atom-size-lg-var, 40px);
-  font-size: var(--mds-core-base-font-size-md, 14px);
-  padding: 0 var(--mds-core-device-component-theme-atom-padding-md-var, 20px);
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04);
 }
 .btn-primary {
@@ -61,12 +61,12 @@
   color: var(--mds-base-semantic-theme-color-text-emphasis-invers, #fff);
 }
 .btn-small {
-  min-height: var(--mds-core-device-component-theme-atom-size-sm-var, 20px);
   font-size: var(--mds-core-base-font-size-sm, 12px);
+  min-height: var(--mds-core-device-component-theme-atom-size-sm-var, 20px);
   padding: 0 var(--mds-core-device-component-theme-atom-padding-sm-var, 10px);
 }
 .btn-large {
-  min-height: var(--mds-core-device-component-theme-atom-size-xl-var, 50px);
   font-size: var(--mds-core-base-font-size-lg, 20px);
+  min-height: var(--mds-core-device-component-theme-atom-size-xl-var, 50px);
   padding: 0 var(--mds-core-device-component-theme-atom-padding-lg-var, 30px);
 }

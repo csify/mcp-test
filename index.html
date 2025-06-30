@@ -2,68 +2,74 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Button Demo – Vanilla & Web Components</title>
+  <title>Button Demo – Alle Permutationen</title>
   <link rel="stylesheet" href="./styles/css/themes/mds-base-bright-desktop.css">
   <link rel="stylesheet" href="./styles/button.css">
   <style>
-    :root {
-      --mds-base-semantic-theme-color-bg-primary: #321850;
-      --mds-base-semantic-theme-color-text-emphasis-invers: #fff;
-      --mds-core-base-component-theme-bg-color: #fff;
-      --mds-base-semantic-theme-color-text-default: #454545;
-      --mds-base-semantic-theme-color-line-default: #ccc;
-      --mds-base-semantic-theme-color-error: #cc3542;
-      --mds-base-semantic-theme-color-remote-control: #008282;
-      --mds-base-semantic-theme-color-active: #6254f7;
-      --mds-base-semantic-theme-color-line-emphasis: #000;
-    }
-
     body { font-family: sans-serif; margin: 2rem; }
+    .demo-table { border-collapse: collapse; margin-bottom: 2rem; }
+    .demo-table th, .demo-table td { padding: 0.5rem 1rem; border: 1px solid #eee; text-align: center; }
     .demo-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
     .demo-section { margin-bottom: 2rem; }
-    h2 { margin-top: 2rem; }
+    .demo-label { font-size: 0.9em; color: #888; }
   </style>
 </head>
 <body>
-  <h1>Button Demo – Vanilla & Web Components</h1>
-
-  <div class="demo-section">
-    <h2>Web Components</h2>
-    <div class="demo-row">
-      <wc-button type="primary" label="Primary"></wc-button>
-      <wc-button type="secondary" label="Secondary"></wc-button>
-      <wc-button type="destructive" label="Destructive"></wc-button>
-      <wc-button type="remotecontrol" label="Remote"></wc-button>
-    </div>
-    <div class="demo-row">
-      <wc-button type="primary" label="Hover" interactionstate="hover"></wc-button>
-      <wc-button type="primary" label="Focus" interactionstate="focus"></wc-button>
-      <wc-button type="primary" label="Selected" interactionstate="selected"></wc-button>
-      <wc-button type="primary" label="Disabled" disabled></wc-button>
-    </div>
-    <div class="demo-row">
-      <wc-button type="primary" label="Icon" icon="★"></wc-button>
-    </div>
-    <script type="module" src="./webcomponents/button/button.js"></script>
-  </div>
-
-  <div class="demo-section">
-    <h2>Vanilla HTML</h2>
-    <div class="demo-row">
-      <button class="btn btn-primary">Primary</button>
-      <button class="btn btn-secondary">Secondary</button>
-      <button class="btn btn-destructive">Destructive</button>
-      <button class="btn btn-remotecontrol">Remote</button>
-    </div>
-    <div class="demo-row">
-      <button class="btn btn-primary btn-hover">Hover</button>
-      <button class="btn btn-primary btn-focus">Focus</button>
-      <button class="btn btn-primary btn-selected">Selected</button>
-      <button class="btn btn-primary btn-disabled" disabled>Disabled</button>
-    </div>
-    <div class="demo-row">
-      <button class="btn btn-primary"><span class="btn-icon">★</span> Icon</button>
-    </div>
-  </div>
+  <h1>Button Demo – Alle Permutationen</h1>
+  <table class="demo-table">
+    <thead>
+      <tr>
+        <th>Semantic</th>
+        <th>State</th>
+        <th>Größe</th>
+        <th>Icon + Label</th>
+        <th>Nur Icon</th>
+        <th>Nur Label</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Permutationen: semantic x state x size x icon/label -->
+      <script>
+        const semantics = ['primary', 'secondary', 'destructive', 'remotecontrol'];
+        const states = [
+          {cls:'', label:'Default'},
+          {cls:'btn-hover', label:'Hover'},
+          {cls:'btn-focus', label:'Focus'},
+          {cls:'btn-selected', label:'Selected'},
+          {cls:'btn-disabled', label:'Disabled', disabled:true}
+        ];
+        const sizes = [
+          {cls:'', label:'Default'},
+          {cls:'btn-small', label:'Small'},
+          {cls:'btn-large', label:'Large'}
+        ];
+        function renderBtn(sem, state, size, icon, label, onlyIcon, onlyLabel) {
+          let cls = `btn btn-${sem} ${state.cls} ${size.cls}`.trim();
+          let html = `<button class='${cls}'`;
+          if(state.disabled) html += ' disabled';
+          html += '>';
+          if(icon) html += `<span class='btn-icon'>★</span>`;
+          if(label) html += label;
+          html += '</button>';
+          return html;
+        }
+        semantics.forEach(sem => {
+          states.forEach(state => {
+            sizes.forEach(size => {
+              document.write('<tr>');
+              document.write(`<td>${sem}</td>`);
+              document.write(`<td>${state.label}</td>`);
+              document.write(`<td>${size.label}</td>`);
+              document.write(`<td>${renderBtn(sem,state,size,true,'Button')}</td>`);
+              document.write(`<td>${renderBtn(sem,state,size,true,'',true,false)}</td>`);
+              document.write(`<td>${renderBtn(sem,state,size,false,'Button',false,true)}</td>`);
+              document.write('</tr>');
+            });
+          });
+        });
+      </script>
+    </tbody>
+  </table>
+  <div class="demo-label">Alle Permutationen: Semantic × State × Größe × Icon/Label</div>
 </body>
 </html>

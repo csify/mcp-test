@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>React Button Demo</title>
+  <link id="theme-link" rel="stylesheet" href="../styles/css/themes/mds-base-bright-desktop.css">
+  <link rel="stylesheet" href="../styles/button.css">
+  <style>
+    body { font-family: sans-serif; margin: 2rem; background: #fafaff; transition: background 0.3s; }
+    body.dark { background: #111; }
+    .theme-toggle-btn {
+      position: fixed; top: 1.2rem; right: 1.2rem; z-index: 1000;
+      background: #eee; color: #222; border: none; border-radius: 6px;
+      padding: 0.5em 1em; font-size: 1em; cursor: pointer;
+      box-shadow: 0 2px 8px #0001;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark .theme-toggle-btn { background: #222; color: #eee; }
+    .demo-label { color: #888; margin-top: 2.5rem; font-size: 1em; transition: color 0.3s; }
+    body.dark .demo-label { color: #bbb; }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle-btn" onclick="toggleTheme()">🌗 Theme wechseln</button>
+  <h1>React Button Demo</h1>
+  <div id="root"></div>
+  <div class="demo-label">Alle Permutationen: Nur relevante semantische States (primary, secondary, destructive, success, remotecontrol, tertiary), atom-size-md / atom-size-lg, alle Varianten (Icon+Text, Icon only, Text only)</div>
+  <script src="/mcp-test/styles/theme-switcher.js"></script>
+  <script type="module">
+    import React from "https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js";
+    import ReactDOM from "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js";
+    import ButtonDemo from './ButtonDemo.tsx';
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(ButtonDemo));
+  </script>
+</body>
+</html>

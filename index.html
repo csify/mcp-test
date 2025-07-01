@@ -27,10 +27,12 @@
     body.dark .demo-card h3 { color: #eee; }
     h1 {
       color: #222;
-      transition: color 0.3s;
+      transition: color 0.3s, filter 0.3s;
+      filter: none;
     }
     body.dark h1 {
       color: #fff;
+      filter: brightness(1.15) drop-shadow(0 2px 8px #0008);
     }
     .demo-table { width: 100%; border-collapse: collapse; background: none; }
     .demo-table th, .demo-table td { padding: 0.5em 1.2em; text-align: center; background: none; }

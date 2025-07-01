@@ -11,23 +11,31 @@
     window.toggleTheme = window.toggleTheme || window['toggleTheme'];
   </script>
   <style>
-    body { font-family: sans-serif; margin: 2rem; }
+    body { font-family: sans-serif; margin: 2rem; background: #fafaff; transition: background 0.3s; }
+    body.dark { background: #111; }
     .theme-toggle-btn {
       position: fixed; top: 1.2rem; right: 1.2rem; z-index: 1000;
       background: #eee; color: #222; border: none; border-radius: 6px;
       padding: 0.5em 1em; font-size: 1em; cursor: pointer;
       box-shadow: 0 2px 8px #0001;
+      transition: background 0.3s, color 0.3s;
     }
     body.dark .theme-toggle-btn { background: #222; color: #eee; }
-    .demo-grid { display: flex; flex-wrap: wrap; gap: 2rem; }
-    .demo-card { border: 1px solid #eee; border-radius: 8px; padding: 1rem; min-width: 340px; margin-bottom: 2rem; background: #fafaff; }
-    .demo-card h3 { margin: 0 0 1rem 0; font-size: 1.1em; }
-    .demo-table { width: 100%; border-collapse: collapse; }
-    .demo-table th, .demo-table td { padding: 0.3em 0.5em; text-align: center; }
-    .demo-table th { background: #f3f3f3; font-size: 0.95em; }
-    .demo-table tr:nth-child(even) { background: #f8f8f8; }
-    .demo-size-label { font-size: 0.95em; color: #333; font-weight: bold; min-width: 70px; display: inline-block; }
-    .demo-state-label { font-size: 0.9em; color: #888; min-width: 70px; display: inline-block; }
+    .demo-grid { display: flex; flex-wrap: wrap; gap: 3.5rem; }
+    .demo-card { border: none; border-radius: 0; padding: 0; min-width: 340px; margin-bottom: 3.5rem; background: none; box-shadow: none; }
+    .demo-card h3 { margin: 0 0 1.2rem 0; font-size: 1.1em; color: #333; transition: color 0.3s; }
+    body.dark .demo-card h3 { color: #eee; }
+    .demo-table { width: 100%; border-collapse: collapse; background: none; }
+    .demo-table th, .demo-table td { padding: 0.5em 1.2em; text-align: center; background: none; }
+    .demo-table th { background: none; font-size: 0.95em; color: #888; transition: color 0.3s; }
+    body.dark .demo-table th { color: #bbb; }
+    .demo-table tr:nth-child(even) { background: none; }
+    .demo-size-label { font-size: 0.95em; color: #333; font-weight: bold; min-width: 70px; display: inline-block; margin: 1.2rem 0 0.5rem 0; transition: color 0.3s; }
+    body.dark .demo-size-label { color: #eee; }
+    .demo-state-label { font-size: 0.9em; color: #888; min-width: 70px; display: inline-block; transition: color 0.3s; }
+    body.dark .demo-state-label { color: #bbb; }
+    .demo-label { color: #888; margin-top: 2.5rem; font-size: 1em; transition: color 0.3s; }
+    body.dark .demo-label { color: #bbb; }
   </style>
 </head>
 <body>

@@ -15,13 +15,18 @@
   overflow: hidden;
 }
 .btn-primary {
-  background: var(--mds-base-semantic-theme-color-bg-primary, #321850);
-  color: var(--mds-base-semantic-theme-color-text-emphasis-invers, #fff);
+  background: var(--mds-core-base-component-theme-button-primary-bg-color-var);
+  color: var(--mds-core-base-component-theme-button-primary-text-color-var);
 }
-.btn-secondary, .btn-inline, .btn-tertiary {
-  background: var(--mds-core-base-component-theme-bg-color, #fff);
-  color: var(--mds-base-semantic-theme-color-text-default, #454545);
-  border: 1px solid var(--mds-base-semantic-theme-color-line-default, #ccc);
+.btn-secondary {
+  background: #fff;
+  color: var(--mds-base-semantic-theme-color-text-default-var, #222);
+  border: 1px solid var(--mds-base-semantic-theme-color-line-default-var, #ccc);
+}
+.btn-tertiary {
+  background: var(--mds-core-base-component-theme-button-tertiary-bg-color-var);
+  color: var(--mds-core-base-component-theme-button-tertiary-text-color-var);
+  border: none;
 }
 .btn-destructive {
   background: var(--mds-core-base-semantic-theme-color-error-var, #cc3542);

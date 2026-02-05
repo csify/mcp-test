@@ -2,35 +2,100 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>React Button Demo</title>
-  <link id="theme-link" rel="stylesheet" href="../styles/css/themes/mds-base-bright-desktop.css">
-  <link rel="stylesheet" href="../styles/button.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDS Button Demo - React</title>
+  
+  <!-- Design Tokens Theme -->
+  <link id="theme-css" rel="stylesheet" href="/mcp-test/styles/css/themes/mds-base-bright-desktop.css">
+  <!-- Button Styles -->
+  <link rel="stylesheet" href="/mcp-test/styles/button.css">
+  
   <style>
-    body { font-family: sans-serif; margin: 2rem; background: #fafaff; transition: background 0.3s; }
-    body.dark { background: #111; }
-    .theme-toggle-btn {
-      position: fixed; top: 1.2rem; right: 1.2rem; z-index: 1000;
-      background: #eee; color: #222; border: none; border-radius: 6px;
-      padding: 0.5em 1em; font-size: 1em; cursor: pointer;
-      box-shadow: 0 2px 8px #0001;
+    * { box-sizing: border-box; }
+    
+    body {
+      font-family: var(--mds-core-base-font-family-default, system-ui, sans-serif);
+      margin: 0;
+      padding: 2rem;
+      background: var(--mds-core-base-component-theme-bg-color, #fafaff);
+      color: var(--mds-base-semantic-theme-color-text-default, #222);
       transition: background 0.3s, color 0.3s;
     }
-    body.dark .theme-toggle-btn { background: #222; color: #eee; }
-    .demo-label { color: #888; margin-top: 2.5rem; font-size: 1em; transition: color 0.3s; }
-    body.dark .demo-label { color: #bbb; }
+    body.dark {
+      background: var(--mds-core-base-component-theme-bg-color, #111);
+      color: var(--mds-base-semantic-theme-color-text-default, #eee);
+    }
+    
+    .demo-app { max-width: 1400px; margin: 0 auto; }
+    
+    .demo-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--mds-base-semantic-theme-color-line-default, #ddd);
+    }
+    .demo-header h1 { margin: 0 0 0.5rem 0; }
+    .demo-header p { margin: 0 0 1rem 0; opacity: 0.7; }
+    
+    .theme-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .theme-switcher select {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--mds-base-semantic-theme-color-line-default, #ccc);
+      background: var(--mds-core-base-component-theme-bg-color, #fff);
+      color: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+    }
+    
+    .variant-card {
+      background: var(--mds-core-base-component-theme-bg-color, #fff);
+      border: 1px solid var(--mds-base-semantic-theme-color-line-default, #e0e0e0);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .variant-card h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+    
+    .demo-table { width: 100%; border-collapse: collapse; }
+    .demo-table th, .demo-table td {
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .demo-table th {
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.7;
+      border-bottom: 1px solid var(--mds-base-semantic-theme-color-line-default, #eee);
+    }
+    .state-label {
+      text-align: left;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    
+    #loading { text-align: center; padding: 3rem; color: #666; }
   </style>
 </head>
 <body>
-  <button class="theme-toggle-btn" onclick="toggleTheme()">🌗 Theme wechseln</button>
-  <h1>React Button Demo</h1>
-  <div id="root"></div>
-  <div class="demo-label">Alle Permutationen: Nur relevante semantische States (primary, secondary, destructive, success, remotecontrol, tertiary), atom-size-md / atom-size-lg, alle Varianten (Icon+Text, Icon only, Text only)</div>
-  <script src="/mcp-test/styles/theme-switcher.js"></script>
-  <script type="module">
-    import React from "https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js";
-    import ReactDOM from "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js";
-    import ButtonDemo from './ButtonDemo.tsx';
-    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(ButtonDemo));
-  </script>
+  <div id="root">
+    <div id="loading">Lädt React Demo...</div>
+  </div>
+  
+  <!-- ES Modules Version -->
+  <script type="module" src="./main.js"></script>
 </body>
 </html>

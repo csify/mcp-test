@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDS Button Demo - Web Components</title>
+  
+  <!-- Design Tokens Theme -->
+  <link id="theme-css" rel="stylesheet" href="/mcp-test/styles/css/themes/mds-base-bright-desktop.css">
+  
+  <style>
+    * { box-sizing: border-box; }
+    
+    body {
+      font-family: var(--mds-core-base-font-family-default, system-ui, sans-serif);
+      margin: 0;
+      padding: 2rem;
+      background: var(--mds-core-base-component-theme-bg-color, #fafaff);
+      color: var(--mds-base-semantic-theme-color-text-default, #222);
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: var(--mds-core-base-component-theme-bg-color, #111);
+      color: var(--mds-base-semantic-theme-color-text-default, #eee);
+    }
+    
+    #loading {
+      text-align: center;
+      padding: 3rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <mds-button-demo></mds-button-demo>
+  
+  <!-- Load Web Components -->
+  <script type="module" src="./components/mds-button-demo.js"></script>
+</body>
+</html>
